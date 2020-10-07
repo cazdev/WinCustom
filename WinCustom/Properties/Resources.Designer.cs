@@ -73,6 +73,51 @@ namespace WinCustom.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap context {
+            get {
+                object obj = ResourceManager.GetObject("context", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Windows Registry Editor Version 5.00
+        ///
+        ///;Show Copy as Path always in the right-click menu, without pressing SHIFT
+        ///;Ramesh Srinivasan, Winhelponline.com
+        ///
+        ///[HKEY_CLASSES_ROOT\Allfilesystemobjects\shell\windows.copyaspath]
+        ///@=&quot;Copy &amp;as path&quot;
+        ///&quot;Icon&quot;=&quot;imageres.dll,-5302&quot;
+        ///&quot;InvokeCommandOnSelection&quot;=dword:00000001
+        ///&quot;VerbHandler&quot;=&quot;{f3d06e7c-1e45-4a26-847e-f9fcdee59be0}&quot;
+        ///&quot;VerbName&quot;=&quot;copyaspath&quot;
+        ///.
+        /// </summary>
+        internal static string CopyAsPath {
+            get {
+                return ResourceManager.GetString("CopyAsPath", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Windows Registry Editor Version 5.00
+        ///
+        ///;Undo file to remove &quot;Copy as Path&quot; which you added earlier.
+        ///;Ramesh Srinivasan, Winhelponline.com
+        ///
+        ///[-HKEY_CLASSES_ROOT\Allfilesystemobjects\shell\windows.copyaspath]
+        ///.
+        /// </summary>
+        internal static string CopyAsPath_Restore {
+            get {
+                return ResourceManager.GetString("CopyAsPath_Restore", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap menu {
             get {
                 object obj = ResourceManager.GetObject("menu", resourceCulture);
