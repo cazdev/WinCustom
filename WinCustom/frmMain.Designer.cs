@@ -30,27 +30,31 @@ namespace WinCustom
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmMain));
             this.topDrag = new System.Windows.Forms.Panel();
             this.topMinimise = new System.Windows.Forms.Button();
             this.topClose = new System.Windows.Forms.Button();
             this.main = new System.Windows.Forms.Panel();
-            this.hoverCollapse = new Transparent();
             this.mainSubtitle = new System.Windows.Forms.Label();
-            this.mainNext = new System.Windows.Forms.Button();
+            this.mainNextContext = new System.Windows.Forms.Button();
             this.side = new System.Windows.Forms.Panel();
+            this.sideHome = new System.Windows.Forms.Button();
+            this.label5 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
             this.mainSettings = new System.Windows.Forms.Button();
-            this.button5 = new System.Windows.Forms.Button();
-            this.button4 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
+            this.sideAbout = new System.Windows.Forms.Button();
+            this.sideTaskbar = new System.Windows.Forms.Button();
+            this.sideStartMenu = new System.Windows.Forms.Button();
+            this.sideCortana = new System.Windows.Forms.Button();
+            this.sideContextMenu = new System.Windows.Forms.Button();
+            this.sideControlPanel = new System.Windows.Forms.Button();
             this.mainLogo = new System.Windows.Forms.Label();
             this.bottom = new System.Windows.Forms.Panel();
+            this.hoverCollapse = new Transparent();
             this.hoverExpand = new Transparent();
-            this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
             this.topDrag.SuspendLayout();
             this.main.SuspendLayout();
             this.side.SuspendLayout();
@@ -107,7 +111,7 @@ namespace WinCustom
             this.main.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
             this.main.Controls.Add(this.hoverCollapse);
             this.main.Controls.Add(this.mainSubtitle);
-            this.main.Controls.Add(this.mainNext);
+            this.main.Controls.Add(this.mainNextContext);
             this.main.Controls.Add(this.side);
             this.main.Controls.Add(this.mainLogo);
             this.main.Controls.Add(this.bottom);
@@ -119,16 +123,6 @@ namespace WinCustom
             this.main.Name = "main";
             this.main.Size = new System.Drawing.Size(800, 422);
             this.main.TabIndex = 1;
-            // 
-            // hoverCollapse
-            // 
-            this.hoverCollapse.BackColor = System.Drawing.Color.Transparent;
-            this.hoverCollapse.Location = new System.Drawing.Point(160, 0);
-            this.hoverCollapse.Name = "hoverCollapse";
-            this.hoverCollapse.Opacity = 100;
-            this.hoverCollapse.Size = new System.Drawing.Size(16, 419);
-            this.hoverCollapse.TabIndex = 12;
-            this.hoverCollapse.MouseEnter += new System.EventHandler(this.hoverCollapse_MouseEnter);
             // 
             // mainSubtitle
             // 
@@ -146,43 +140,116 @@ namespace WinCustom
             this.mainSubtitle.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             this.mainSubtitle.Click += new System.EventHandler(this.mainSubtitle_Click);
             // 
-            // mainNext
+            // mainNextContext
             // 
-            this.mainNext.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(128)))), ((int)(((byte)(185)))));
-            this.mainNext.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.mainNext.FlatAppearance.BorderSize = 0;
-            this.mainNext.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(152)))), ((int)(((byte)(219)))));
-            this.mainNext.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(152)))), ((int)(((byte)(219)))));
-            this.mainNext.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.mainNext.Font = new System.Drawing.Font("Segoe UI", 12F);
-            this.mainNext.ForeColor = System.Drawing.Color.White;
-            this.mainNext.Location = new System.Drawing.Point(344, 293);
-            this.mainNext.Name = "mainNext";
-            this.mainNext.Size = new System.Drawing.Size(108, 33);
-            this.mainNext.TabIndex = 4;
-            this.mainNext.Text = "Continue";
-            this.mainNext.UseVisualStyleBackColor = false;
-            this.mainNext.Click += new System.EventHandler(this.mainNext_Click);
+            this.mainNextContext.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
+            this.mainNextContext.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("mainNextContext.BackgroundImage")));
+            this.mainNextContext.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.mainNextContext.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.mainNextContext.FlatAppearance.BorderSize = 0;
+            this.mainNextContext.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
+            this.mainNextContext.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
+            this.mainNextContext.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.mainNextContext.Font = new System.Drawing.Font("Segoe UI", 12F);
+            this.mainNextContext.ForeColor = System.Drawing.Color.White;
+            this.mainNextContext.Location = new System.Drawing.Point(375, 294);
+            this.mainNextContext.Name = "mainNextContext";
+            this.mainNextContext.Size = new System.Drawing.Size(48, 48);
+            this.mainNextContext.TabIndex = 4;
+            this.mainNextContext.UseVisualStyleBackColor = false;
+            this.mainNextContext.Click += new System.EventHandler(this.mainNextContext_Click);
+            this.mainNextContext.MouseEnter += new System.EventHandler(this.mainNext_MouseEnter);
+            this.mainNextContext.MouseLeave += new System.EventHandler(this.mainNext_MouseLeave);
             // 
             // side
             // 
             this.side.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
+            this.side.Controls.Add(this.sideHome);
+            this.side.Controls.Add(this.label5);
             this.side.Controls.Add(this.label4);
             this.side.Controls.Add(this.label3);
             this.side.Controls.Add(this.label2);
             this.side.Controls.Add(this.label1);
             this.side.Controls.Add(this.mainSettings);
-            this.side.Controls.Add(this.button5);
-            this.side.Controls.Add(this.button4);
-            this.side.Controls.Add(this.button3);
-            this.side.Controls.Add(this.button2);
-            this.side.Controls.Add(this.button1);
+            this.side.Controls.Add(this.sideAbout);
+            this.side.Controls.Add(this.sideTaskbar);
+            this.side.Controls.Add(this.sideStartMenu);
+            this.side.Controls.Add(this.sideCortana);
+            this.side.Controls.Add(this.sideContextMenu);
+            this.side.Controls.Add(this.sideControlPanel);
             this.side.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.side.ForeColor = System.Drawing.Color.White;
-            this.side.Location = new System.Drawing.Point(-133, 0);
+            this.side.Location = new System.Drawing.Point(0, 0);
             this.side.Name = "side";
             this.side.Size = new System.Drawing.Size(163, 417);
             this.side.TabIndex = 2;
+            // 
+            // sideHome
+            // 
+            this.sideHome.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.sideHome.FlatAppearance.BorderSize = 0;
+            this.sideHome.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(152)))), ((int)(((byte)(219)))));
+            this.sideHome.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(152)))), ((int)(((byte)(219)))));
+            this.sideHome.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.sideHome.Font = new System.Drawing.Font("Segoe UI", 10.5F);
+            this.sideHome.ForeColor = System.Drawing.Color.White;
+            this.sideHome.Location = new System.Drawing.Point(0, 69);
+            this.sideHome.Name = "sideHome";
+            this.sideHome.Size = new System.Drawing.Size(163, 28);
+            this.sideHome.TabIndex = 23;
+            this.sideHome.Text = "Home";
+            this.sideHome.UseVisualStyleBackColor = false;
+            this.sideHome.Click += new System.EventHandler(this.sideHome_Click);
+            // 
+            // label5
+            // 
+            this.label5.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.Location = new System.Drawing.Point(136, 253);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(27, 32);
+            this.label5.TabIndex = 22;
+            this.label5.Text = "...";
+            this.label5.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            // 
+            // label4
+            // 
+            this.label4.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.Location = new System.Drawing.Point(136, 224);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(27, 32);
+            this.label4.TabIndex = 20;
+            this.label4.Text = "...";
+            this.label4.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            // 
+            // label3
+            // 
+            this.label3.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Location = new System.Drawing.Point(136, 196);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(27, 32);
+            this.label3.TabIndex = 19;
+            this.label3.Text = "...";
+            this.label3.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            // 
+            // label2
+            // 
+            this.label2.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(136, 168);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(27, 32);
+            this.label2.TabIndex = 18;
+            this.label2.Text = "...";
+            this.label2.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            // 
+            // label1
+            // 
+            this.label1.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(136, 140);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(27, 32);
+            this.label1.TabIndex = 17;
+            this.label1.Text = "...";
+            this.label1.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
             // mainSettings
             // 
@@ -195,91 +262,108 @@ namespace WinCustom
             this.mainSettings.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.mainSettings.Font = new System.Drawing.Font("Segoe UI", 10.5F);
             this.mainSettings.ForeColor = System.Drawing.Color.White;
-            this.mainSettings.Location = new System.Drawing.Point(64, 48);
+            this.mainSettings.Location = new System.Drawing.Point(65, 18);
             this.mainSettings.Name = "mainSettings";
             this.mainSettings.Size = new System.Drawing.Size(32, 32);
             this.mainSettings.TabIndex = 16;
             this.mainSettings.UseVisualStyleBackColor = false;
             // 
-            // button5
+            // sideAbout
             // 
-            this.button5.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.button5.FlatAppearance.BorderSize = 0;
-            this.button5.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(152)))), ((int)(((byte)(219)))));
-            this.button5.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(152)))), ((int)(((byte)(219)))));
-            this.button5.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button5.Font = new System.Drawing.Font("Segoe UI", 10.5F);
-            this.button5.ForeColor = System.Drawing.Color.White;
-            this.button5.Location = new System.Drawing.Point(26, 345);
-            this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(108, 28);
-            this.button5.TabIndex = 15;
-            this.button5.Text = "About";
-            this.button5.UseVisualStyleBackColor = false;
+            this.sideAbout.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.sideAbout.FlatAppearance.BorderSize = 0;
+            this.sideAbout.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(152)))), ((int)(((byte)(219)))));
+            this.sideAbout.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(152)))), ((int)(((byte)(219)))));
+            this.sideAbout.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.sideAbout.Font = new System.Drawing.Font("Segoe UI", 10.5F);
+            this.sideAbout.ForeColor = System.Drawing.Color.White;
+            this.sideAbout.Location = new System.Drawing.Point(0, 339);
+            this.sideAbout.Name = "sideAbout";
+            this.sideAbout.Size = new System.Drawing.Size(163, 28);
+            this.sideAbout.TabIndex = 15;
+            this.sideAbout.Text = "About";
+            this.sideAbout.UseVisualStyleBackColor = false;
             // 
-            // button4
+            // sideTaskbar
             // 
-            this.button4.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.button4.FlatAppearance.BorderSize = 0;
-            this.button4.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(152)))), ((int)(((byte)(219)))));
-            this.button4.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(152)))), ((int)(((byte)(219)))));
-            this.button4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button4.Font = new System.Drawing.Font("Segoe UI", 10.5F);
-            this.button4.ForeColor = System.Drawing.Color.White;
-            this.button4.Location = new System.Drawing.Point(26, 216);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(108, 28);
-            this.button4.TabIndex = 14;
-            this.button4.Text = "Taskbar";
-            this.button4.UseVisualStyleBackColor = false;
+            this.sideTaskbar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.sideTaskbar.FlatAppearance.BorderSize = 0;
+            this.sideTaskbar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(152)))), ((int)(((byte)(219)))));
+            this.sideTaskbar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(152)))), ((int)(((byte)(219)))));
+            this.sideTaskbar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.sideTaskbar.Font = new System.Drawing.Font("Segoe UI", 10.5F);
+            this.sideTaskbar.ForeColor = System.Drawing.Color.White;
+            this.sideTaskbar.Location = new System.Drawing.Point(0, 257);
+            this.sideTaskbar.Name = "sideTaskbar";
+            this.sideTaskbar.Size = new System.Drawing.Size(163, 28);
+            this.sideTaskbar.TabIndex = 14;
+            this.sideTaskbar.Text = "Taskbar";
+            this.sideTaskbar.UseVisualStyleBackColor = false;
             // 
-            // button3
+            // sideStartMenu
             // 
-            this.button3.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.button3.FlatAppearance.BorderSize = 0;
-            this.button3.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(152)))), ((int)(((byte)(219)))));
-            this.button3.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(152)))), ((int)(((byte)(219)))));
-            this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button3.Font = new System.Drawing.Font("Segoe UI", 10.5F);
-            this.button3.ForeColor = System.Drawing.Color.White;
-            this.button3.Location = new System.Drawing.Point(26, 188);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(108, 28);
-            this.button3.TabIndex = 13;
-            this.button3.Text = "Start Menu";
-            this.button3.UseVisualStyleBackColor = false;
+            this.sideStartMenu.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.sideStartMenu.FlatAppearance.BorderSize = 0;
+            this.sideStartMenu.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(152)))), ((int)(((byte)(219)))));
+            this.sideStartMenu.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(152)))), ((int)(((byte)(219)))));
+            this.sideStartMenu.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.sideStartMenu.Font = new System.Drawing.Font("Segoe UI", 10.5F);
+            this.sideStartMenu.ForeColor = System.Drawing.Color.White;
+            this.sideStartMenu.Location = new System.Drawing.Point(0, 229);
+            this.sideStartMenu.Name = "sideStartMenu";
+            this.sideStartMenu.Size = new System.Drawing.Size(163, 28);
+            this.sideStartMenu.TabIndex = 13;
+            this.sideStartMenu.Text = "Start Menu";
+            this.sideStartMenu.UseVisualStyleBackColor = false;
             // 
-            // button2
+            // sideCortana
             // 
-            this.button2.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.button2.FlatAppearance.BorderSize = 0;
-            this.button2.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(152)))), ((int)(((byte)(219)))));
-            this.button2.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(152)))), ((int)(((byte)(219)))));
-            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button2.Font = new System.Drawing.Font("Segoe UI", 10.5F);
-            this.button2.ForeColor = System.Drawing.Color.White;
-            this.button2.Location = new System.Drawing.Point(26, 160);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(108, 28);
-            this.button2.TabIndex = 12;
-            this.button2.Text = "Cortana";
-            this.button2.UseVisualStyleBackColor = false;
+            this.sideCortana.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.sideCortana.FlatAppearance.BorderSize = 0;
+            this.sideCortana.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(152)))), ((int)(((byte)(219)))));
+            this.sideCortana.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(152)))), ((int)(((byte)(219)))));
+            this.sideCortana.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.sideCortana.Font = new System.Drawing.Font("Segoe UI", 10.5F);
+            this.sideCortana.ForeColor = System.Drawing.Color.White;
+            this.sideCortana.Location = new System.Drawing.Point(0, 172);
+            this.sideCortana.Name = "sideCortana";
+            this.sideCortana.Size = new System.Drawing.Size(163, 28);
+            this.sideCortana.TabIndex = 12;
+            this.sideCortana.Text = "Cortana";
+            this.sideCortana.UseVisualStyleBackColor = false;
             // 
-            // button1
+            // sideContextMenu
             // 
-            this.button1.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.button1.FlatAppearance.BorderSize = 0;
-            this.button1.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(152)))), ((int)(((byte)(219)))));
-            this.button1.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(152)))), ((int)(((byte)(219)))));
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.Font = new System.Drawing.Font("Segoe UI", 10.5F);
-            this.button1.ForeColor = System.Drawing.Color.White;
-            this.button1.Location = new System.Drawing.Point(26, 132);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(108, 28);
-            this.button1.TabIndex = 11;
-            this.button1.Text = "Context Menu";
-            this.button1.UseVisualStyleBackColor = false;
+            this.sideContextMenu.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.sideContextMenu.FlatAppearance.BorderSize = 0;
+            this.sideContextMenu.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(152)))), ((int)(((byte)(219)))));
+            this.sideContextMenu.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(152)))), ((int)(((byte)(219)))));
+            this.sideContextMenu.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.sideContextMenu.Font = new System.Drawing.Font("Segoe UI", 10.5F);
+            this.sideContextMenu.ForeColor = System.Drawing.Color.White;
+            this.sideContextMenu.Location = new System.Drawing.Point(0, 144);
+            this.sideContextMenu.Name = "sideContextMenu";
+            this.sideContextMenu.Size = new System.Drawing.Size(163, 28);
+            this.sideContextMenu.TabIndex = 11;
+            this.sideContextMenu.Text = "Context Menu";
+            this.sideContextMenu.UseVisualStyleBackColor = false;
+            this.sideContextMenu.Click += new System.EventHandler(this.mainNextContext_Click);
+            // 
+            // sideControlPanel
+            // 
+            this.sideControlPanel.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.sideControlPanel.FlatAppearance.BorderSize = 0;
+            this.sideControlPanel.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(152)))), ((int)(((byte)(219)))));
+            this.sideControlPanel.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(152)))), ((int)(((byte)(219)))));
+            this.sideControlPanel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.sideControlPanel.Font = new System.Drawing.Font("Segoe UI", 10.5F);
+            this.sideControlPanel.ForeColor = System.Drawing.Color.White;
+            this.sideControlPanel.Location = new System.Drawing.Point(3, 200);
+            this.sideControlPanel.Name = "sideControlPanel";
+            this.sideControlPanel.Size = new System.Drawing.Size(163, 28);
+            this.sideControlPanel.TabIndex = 21;
+            this.sideControlPanel.Text = "Control Panel";
+            this.sideControlPanel.UseVisualStyleBackColor = false;
             // 
             // mainLogo
             // 
@@ -307,6 +391,16 @@ namespace WinCustom
             this.bottom.Size = new System.Drawing.Size(800, 5);
             this.bottom.TabIndex = 0;
             // 
+            // hoverCollapse
+            // 
+            this.hoverCollapse.BackColor = System.Drawing.Color.Transparent;
+            this.hoverCollapse.Location = new System.Drawing.Point(163, 0);
+            this.hoverCollapse.Name = "hoverCollapse";
+            this.hoverCollapse.Opacity = 100;
+            this.hoverCollapse.Size = new System.Drawing.Size(52, 419);
+            this.hoverCollapse.TabIndex = 12;
+            this.hoverCollapse.MouseEnter += new System.EventHandler(this.hoverCollapse_MouseEnter);
+            // 
             // hoverExpand
             // 
             this.hoverExpand.BackColor = System.Drawing.Color.Transparent;
@@ -317,46 +411,6 @@ namespace WinCustom
             this.hoverExpand.TabIndex = 11;
             this.hoverExpand.MouseEnter += new System.EventHandler(this.hoverExpand_MouseEnter);
             // 
-            // label1
-            // 
-            this.label1.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(136, 129);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(27, 25);
-            this.label1.TabIndex = 17;
-            this.label1.Text = "...";
-            this.label1.TextAlign = System.Drawing.ContentAlignment.TopCenter;
-            // 
-            // label2
-            // 
-            this.label2.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(136, 157);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(27, 25);
-            this.label2.TabIndex = 18;
-            this.label2.Text = "...";
-            this.label2.TextAlign = System.Drawing.ContentAlignment.TopCenter;
-            // 
-            // label3
-            // 
-            this.label3.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(136, 185);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(27, 25);
-            this.label3.TabIndex = 19;
-            this.label3.Text = "...";
-            this.label3.TextAlign = System.Drawing.ContentAlignment.TopCenter;
-            // 
-            // label4
-            // 
-            this.label4.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(136, 213);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(27, 25);
-            this.label4.TabIndex = 20;
-            this.label4.Text = "...";
-            this.label4.TextAlign = System.Drawing.ContentAlignment.TopCenter;
-            // 
             // frmMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -365,8 +419,10 @@ namespace WinCustom
             this.Controls.Add(this.main);
             this.Controls.Add(this.topDrag);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "frmMain";
             this.Text = "WinCustom";
+            this.Load += new System.EventHandler(this.frmMain_Load);
             this.topDrag.ResumeLayout(false);
             this.main.ResumeLayout(false);
             this.side.ResumeLayout(false);
@@ -377,26 +433,29 @@ namespace WinCustom
         #endregion
 
         private System.Windows.Forms.Panel topDrag;
-        private System.Windows.Forms.Panel main;
         private System.Windows.Forms.Panel bottom;
         private System.Windows.Forms.Label mainLogo;
         private System.Windows.Forms.Button topClose;
         private System.Windows.Forms.Button topMinimise;
-        private System.Windows.Forms.Button mainNext;
+        private System.Windows.Forms.Button mainNextContext;
         private System.Windows.Forms.Label mainSubtitle;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button button4;
-        private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button sideTaskbar;
+        private System.Windows.Forms.Button sideStartMenu;
         private Transparent hoverExpand;
-        private System.Windows.Forms.Button button5;
-        private Button mainSettings;
+        private System.Windows.Forms.Button sideAbout;
         public Panel side;
         private Transparent hoverCollapse;
         private Label label4;
         private Label label3;
         private Label label2;
         private Label label1;
+        private Button sideControlPanel;
+        private Label label5;
+        private Button sideHome;
+        private Button mainSettings;
+        public Button sideContextMenu;
+        public Button sideCortana;
+        public Panel main;
     }
 }
 

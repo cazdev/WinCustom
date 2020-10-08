@@ -9,6 +9,7 @@ using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using WinCustom.Properties;
 
 namespace WinCustom
 {
@@ -71,7 +72,7 @@ namespace WinCustom
                 }
             }
         }
-
+        
         public void collapseControl(Control c, int collapseTo)
         {
             if (c.Location.X > collapseTo)
@@ -84,6 +85,12 @@ namespace WinCustom
                 }
             }
         }
+
+        private frmDisplay display = new frmDisplay()
+        {
+            TopLevel = false,
+            AutoScroll = true
+        };
 
         private void topClose_Click(object sender, EventArgs e)
         {
@@ -104,27 +111,14 @@ namespace WinCustom
             this.WindowState = FormWindowState.Minimized;
         }
 
-        private void mainNext_Click(object sender, EventArgs e)
+        private void mainNext_MouseEnter(object sender, EventArgs e)
         {
-            if (!Directory.Exists(RegistryManager.AppData))
-            {
-                Directory.CreateDirectory(RegistryManager.AppData);
-            }
+            mainNextContext.BackgroundImage = Resources.next_button_hover;
+        }
 
-            hoverCollapse.BringToFront();
-
-            // Hide previous controls
-            mainLogo.Hide();
-            mainSubtitle.Hide();
-            mainNext.Hide();
-
-            // Display next screen
-            frmContextMenu frm = new frmContextMenu() {
-                TopLevel = false,
-                AutoScroll = true
-            };
-            main.Controls.Add(frm);
-            frm.Show();
+        private void mainNext_MouseLeave(object sender, EventArgs e)
+        {
+            mainNextContext.BackgroundImage = Resources.next_button;
         }
 
         private void mainLogo_Click(object sender, EventArgs e)
@@ -150,6 +144,60 @@ namespace WinCustom
         {
             var t = new Thread(() => collapseControl(side, -130));
             t.Start();
+        }
+
+        private void frmMain_Load(object sender, EventArgs e)
+        {
+            side.Location = new Point(-133, side.Location.Y);
+        }
+
+        private void mainNextContext_Click(object sender, EventArgs e)
+        {
+            if (!Directory.Exists(RegistryManager.AppData))
+            {
+                Directory.CreateDirectory(RegistryManager.AppData);
+            }
+
+            hoverCollapse.BringToFront();
+
+            // Hide previous controls
+            display.mainPrevious.Hide();
+            mainLogo.Hide();
+            mainSubtitle.Hide();
+            mainNextContext.Hide();
+
+            sideContextMenu.BackColor = Color.FromArgb(52, 152, 219);
+
+            if (RegistryManager.RegistryValueExists(
+                @"HKEY_CLASSES_ROOT\Allfilesystemobjects\shell\windows.copyaspath", "InvokeCommandOnSelection"))
+            {
+                display.mainCheckBox.Checked = true;
+            }
+            else
+            {
+                display.mainCheckBox.Checked = false;
+            }
+
+            main.Controls.Add(display);
+            //display next screen
+            display.Show();
+            display.Enabled = true; ;
+        }
+
+        private void sideHome_Click(object sender, EventArgs e)
+        {
+            // Hide previous controls
+            mainLogo.Show();
+            mainSubtitle.Show();
+            mainNextContext.Show();
+            sideContextMenu.BackColor = Color.FromArgb(40,40,40);
+            sideControlPanel.BackColor = Color.FromArgb(40, 40, 40);
+            sideCortana.BackColor = Color.FromArgb(40, 40, 40);
+            sideStartMenu.BackColor = Color.FromArgb(40, 40, 40);
+            sideTaskbar.BackColor = Color.FromArgb(40, 40, 40);
+
+            display.Hide();
+            display.Enabled = false;
         }
     }
 }

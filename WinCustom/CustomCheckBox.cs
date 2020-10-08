@@ -14,7 +14,7 @@ public class CustomCheckBox : CheckBox
         SetStyle(ControlStyles.UserPaint | ControlStyles.AllPaintingInWmPaint, true);
         Padding = new Padding(6);
     }
-
+    
     protected override void OnPaint(PaintEventArgs e)
     {
         this.OnPaintBackground(e);
