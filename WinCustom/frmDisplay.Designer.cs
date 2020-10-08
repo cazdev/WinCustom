@@ -29,40 +29,40 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmDisplay));
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.mainLogo = new System.Windows.Forms.Label();
+            this.mainPictureBox = new System.Windows.Forms.PictureBox();
+            this.mainTitle = new System.Windows.Forms.Label();
             this.bottom = new System.Windows.Forms.Panel();
             this.mainPrevious = new System.Windows.Forms.Button();
             this.mainNext = new System.Windows.Forms.Button();
             this.mainCheckBox = new CustomCheckBox();
-            this.label1 = new System.Windows.Forms.Label();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            this.mainSubtitle = new System.Windows.Forms.Label();
+            ((System.ComponentModel.ISupportInitialize)(this.mainPictureBox)).BeginInit();
             this.bottom.SuspendLayout();
             this.SuspendLayout();
             // 
-            // pictureBox1
+            // mainPictureBox
             // 
-            this.pictureBox1.Image = global::WinCustom.Properties.Resources.context;
-            this.pictureBox1.Location = new System.Drawing.Point(0, 39);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(800, 266);
-            this.pictureBox1.TabIndex = 7;
-            this.pictureBox1.TabStop = false;
+            this.mainPictureBox.Image = global::WinCustom.Properties.Resources.context;
+            this.mainPictureBox.Location = new System.Drawing.Point(0, 39);
+            this.mainPictureBox.Name = "mainPictureBox";
+            this.mainPictureBox.Size = new System.Drawing.Size(800, 266);
+            this.mainPictureBox.TabIndex = 7;
+            this.mainPictureBox.TabStop = false;
             // 
-            // mainLogo
+            // mainTitle
             // 
-            this.mainLogo.AutoEllipsis = true;
-            this.mainLogo.BackColor = System.Drawing.Color.Transparent;
-            this.mainLogo.Cursor = System.Windows.Forms.Cursors.Default;
-            this.mainLogo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.mainLogo.Font = new System.Drawing.Font("Segoe UI Semilight", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.mainLogo.ForeColor = System.Drawing.Color.White;
-            this.mainLogo.Location = new System.Drawing.Point(0, 0);
-            this.mainLogo.Name = "mainLogo";
-            this.mainLogo.Size = new System.Drawing.Size(800, 36);
-            this.mainLogo.TabIndex = 9;
-            this.mainLogo.Text = "Copy directory path";
-            this.mainLogo.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.mainTitle.AutoEllipsis = true;
+            this.mainTitle.BackColor = System.Drawing.Color.Transparent;
+            this.mainTitle.Cursor = System.Windows.Forms.Cursors.Default;
+            this.mainTitle.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.mainTitle.Font = new System.Drawing.Font("Segoe UI Semilight", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.mainTitle.ForeColor = System.Drawing.Color.White;
+            this.mainTitle.Location = new System.Drawing.Point(0, 0);
+            this.mainTitle.Name = "mainTitle";
+            this.mainTitle.Size = new System.Drawing.Size(800, 36);
+            this.mainTitle.TabIndex = 9;
+            this.mainTitle.Text = "Copy directory path";
+            this.mainTitle.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             // 
             // bottom
             // 
@@ -93,6 +93,7 @@
             this.mainPrevious.Size = new System.Drawing.Size(38, 38);
             this.mainPrevious.TabIndex = 11;
             this.mainPrevious.UseVisualStyleBackColor = false;
+            this.mainPrevious.Click += new System.EventHandler(this.mainPrevious_Click);
             this.mainPrevious.MouseEnter += new System.EventHandler(this.mainPrevious_MouseEnter);
             this.mainPrevious.MouseLeave += new System.EventHandler(this.mainPrevious_MouseLeave);
             // 
@@ -113,6 +114,7 @@
             this.mainNext.Size = new System.Drawing.Size(38, 38);
             this.mainNext.TabIndex = 10;
             this.mainNext.UseVisualStyleBackColor = false;
+            this.mainNext.Click += new System.EventHandler(this.mainNext_Click);
             this.mainNext.MouseEnter += new System.EventHandler(this.mainNext_MouseEnter);
             this.mainNext.MouseLeave += new System.EventHandler(this.mainNext_MouseLeave);
             // 
@@ -127,20 +129,20 @@
             this.mainCheckBox.UseVisualStyleBackColor = true;
             this.mainCheckBox.CheckedChanged += new System.EventHandler(this.mainCheckBox_CheckedChanged);
             // 
-            // label1
+            // mainSubtitle
             // 
-            this.label1.AutoEllipsis = true;
-            this.label1.BackColor = System.Drawing.Color.Transparent;
-            this.label1.Cursor = System.Windows.Forms.Cursors.Default;
-            this.label1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.label1.Font = new System.Drawing.Font("Segoe UI Semilight", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(1, 310);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(800, 26);
-            this.label1.TabIndex = 12;
-            this.label1.Text = "Adds the option to copy directory path in file context menu";
-            this.label1.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.mainSubtitle.AutoEllipsis = true;
+            this.mainSubtitle.BackColor = System.Drawing.Color.Transparent;
+            this.mainSubtitle.Cursor = System.Windows.Forms.Cursors.Default;
+            this.mainSubtitle.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.mainSubtitle.Font = new System.Drawing.Font("Segoe UI Semilight", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.mainSubtitle.ForeColor = System.Drawing.Color.White;
+            this.mainSubtitle.Location = new System.Drawing.Point(1, 310);
+            this.mainSubtitle.Name = "mainSubtitle";
+            this.mainSubtitle.Size = new System.Drawing.Size(800, 26);
+            this.mainSubtitle.TabIndex = 12;
+            this.mainSubtitle.Text = "Adds the option to copy directory path in file context menu";
+            this.mainSubtitle.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
             // frmDisplay
             // 
@@ -148,27 +150,27 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
             this.ClientSize = new System.Drawing.Size(800, 422);
-            this.Controls.Add(this.pictureBox1);
-            this.Controls.Add(this.label1);
-            this.Controls.Add(this.mainLogo);
+            this.Controls.Add(this.mainPictureBox);
+            this.Controls.Add(this.mainSubtitle);
+            this.Controls.Add(this.mainTitle);
             this.Controls.Add(this.bottom);
             this.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.Name = "frmDisplay";
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.mainPictureBox)).EndInit();
             this.bottom.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
 
         #endregion
-        private System.Windows.Forms.PictureBox pictureBox1;
-        private System.Windows.Forms.Label mainLogo;
         private System.Windows.Forms.Panel bottom;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Button mainNext;
         public CustomCheckBox mainCheckBox;
         public System.Windows.Forms.Button mainPrevious;
+        public System.Windows.Forms.Label mainTitle;
+        public System.Windows.Forms.Label mainSubtitle;
+        public System.Windows.Forms.PictureBox mainPictureBox;
+        public System.Windows.Forms.Button mainNext;
     }
 }

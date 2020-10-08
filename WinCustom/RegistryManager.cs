@@ -41,5 +41,21 @@ namespace WinCustom
                 return true;
             }
         }
+
+        public static bool GetRegistryValue(String keyName, String valueName, String value)
+        {
+            string regValue = Registry.GetValue(keyName, valueName, null).ToString();
+
+            if (regValue == value)
+            {
+                //value does not exist
+                return false;
+            }
+            else
+            {
+                //value exists
+                return true;
+            }
+        }
     }
 }

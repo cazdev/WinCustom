@@ -23,16 +23,7 @@ namespace WinCustom
 
         private void mainCheckBox_CheckedChanged(object sender, EventArgs e)
         {
-            if (mainCheckBox.Checked)
-            {
-                String filename = "CopyAsPath.reg";
-                RegistryManager.ApplyRegistry(Resources.CopyAsPath, filename);
-            }
-            else
-            {
-                String filename = "CopyAsPath-Restore.reg";
-                RegistryManager.ApplyRegistry(Resources.CopyAsPath_Restore, filename);
-            }
+            ScreenManager.SwitchCheckBox();
         }
 
         private void mainNext_MouseEnter(object sender, EventArgs e)
@@ -53,6 +44,20 @@ namespace WinCustom
         private void mainPrevious_MouseLeave(object sender, EventArgs e)
         {
             mainPrevious.BackgroundImage = Resources.next_button1;
+        }
+
+        private void mainNext_Click(object sender, EventArgs e)
+        {
+            ScreenManager.displayMenu = ScreenManager.Next(ScreenManager.displayMenu);
+            ScreenManager.DisplayNext();
+            ScreenManager.DefaultCheckBox();
+        }
+
+        private void mainPrevious_Click(object sender, EventArgs e)
+        {
+            ScreenManager.displayMenu = ScreenManager.Previous(ScreenManager.displayMenu);
+            ScreenManager.DisplayNext();
+            ScreenManager.DefaultCheckBox();
         }
     }
 }

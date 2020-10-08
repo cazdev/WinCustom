@@ -61,6 +61,36 @@ namespace WinCustom.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Windows Registry Editor Version 5.00
+        ///
+        ///; MajorGeeks.Com
+        ///; How to Add Color and Appearance to Control Panel in Windows
+        ///; Tutorial: https://www.majorgeeks.com/content/page/how_to_add_color_and_appearance_to_control_panel_in_windows.html
+        ///
+        ///[HKEY_CLASSES_ROOT\CLSID\{106ee807-9e5d-451b-a9c5-74908630cefb}]
+        ///@=&quot;Color and Appearance&quot;
+        ///&quot;InfoTip&quot;=&quot;Change the color of your taskbar, window borders, and Start menu&quot;
+        ///&quot;System.ApplicationName&quot;=&quot;Microsoft.Personalization&quot;
+        ///&quot;System.ControlPanel.Category&quot;=dword:00000001
+        /// [rest of string was truncated]&quot;;.
+        /// </summary>
+        internal static string add_appearance_color {
+            get {
+                return ResourceManager.GetString("add_appearance_color", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap appearance {
+            get {
+                object obj = ResourceManager.GetObject("appearance", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
         internal static System.Drawing.Bitmap back {
@@ -112,6 +142,16 @@ namespace WinCustom.Properties {
         internal static string CopyAsPath_Restore {
             get {
                 return ResourceManager.GetString("CopyAsPath_Restore", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap cortana {
+            get {
+                object obj = ResourceManager.GetObject("cortana", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
             }
         }
         
@@ -186,6 +226,23 @@ namespace WinCustom.Properties {
             get {
                 object obj = ResourceManager.GetObject("next_button1", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Windows Registry Editor Version 5.00
+        ///
+        ///; MajorGeeks.Com
+        ///; How to Add Color and Appearance to Control Panel in Windows
+        ///; Tutorial: https://www.majorgeeks.com/content/page/how_to_add_color_and_appearance_to_control_panel_in_windows.html
+        ///
+        ///[-HKEY_CLASSES_ROOT\CLSID\{106ee807-9e5d-451b-a9c5-74908630cefb}]
+        ///
+        ///[-HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\ControlPanel\NameSpace\{106ee807-9e5d-451b-a9c5-74908630cefb}].
+        /// </summary>
+        internal static string remove_appearance_color {
+            get {
+                return ResourceManager.GetString("remove_appearance_color", resourceCulture);
             }
         }
         

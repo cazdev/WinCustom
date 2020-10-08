@@ -36,7 +36,7 @@ namespace WinCustom
             this.topClose = new System.Windows.Forms.Button();
             this.main = new System.Windows.Forms.Panel();
             this.mainSubtitle = new System.Windows.Forms.Label();
-            this.mainNextContext = new System.Windows.Forms.Button();
+            this.mainNext = new System.Windows.Forms.Button();
             this.side = new System.Windows.Forms.Panel();
             this.sideHome = new System.Windows.Forms.Button();
             this.label5 = new System.Windows.Forms.Label();
@@ -111,7 +111,7 @@ namespace WinCustom
             this.main.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
             this.main.Controls.Add(this.hoverCollapse);
             this.main.Controls.Add(this.mainSubtitle);
-            this.main.Controls.Add(this.mainNextContext);
+            this.main.Controls.Add(this.mainNext);
             this.main.Controls.Add(this.side);
             this.main.Controls.Add(this.mainLogo);
             this.main.Controls.Add(this.bottom);
@@ -140,26 +140,26 @@ namespace WinCustom
             this.mainSubtitle.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             this.mainSubtitle.Click += new System.EventHandler(this.mainSubtitle_Click);
             // 
-            // mainNextContext
+            // mainNext
             // 
-            this.mainNextContext.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
-            this.mainNextContext.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("mainNextContext.BackgroundImage")));
-            this.mainNextContext.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.mainNextContext.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.mainNextContext.FlatAppearance.BorderSize = 0;
-            this.mainNextContext.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
-            this.mainNextContext.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
-            this.mainNextContext.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.mainNextContext.Font = new System.Drawing.Font("Segoe UI", 12F);
-            this.mainNextContext.ForeColor = System.Drawing.Color.White;
-            this.mainNextContext.Location = new System.Drawing.Point(375, 294);
-            this.mainNextContext.Name = "mainNextContext";
-            this.mainNextContext.Size = new System.Drawing.Size(48, 48);
-            this.mainNextContext.TabIndex = 4;
-            this.mainNextContext.UseVisualStyleBackColor = false;
-            this.mainNextContext.Click += new System.EventHandler(this.mainNextContext_Click);
-            this.mainNextContext.MouseEnter += new System.EventHandler(this.mainNext_MouseEnter);
-            this.mainNextContext.MouseLeave += new System.EventHandler(this.mainNext_MouseLeave);
+            this.mainNext.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
+            this.mainNext.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("mainNext.BackgroundImage")));
+            this.mainNext.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.mainNext.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.mainNext.FlatAppearance.BorderSize = 0;
+            this.mainNext.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
+            this.mainNext.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
+            this.mainNext.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.mainNext.Font = new System.Drawing.Font("Segoe UI", 12F);
+            this.mainNext.ForeColor = System.Drawing.Color.White;
+            this.mainNext.Location = new System.Drawing.Point(375, 294);
+            this.mainNext.Name = "mainNext";
+            this.mainNext.Size = new System.Drawing.Size(48, 48);
+            this.mainNext.TabIndex = 4;
+            this.mainNext.UseVisualStyleBackColor = false;
+            this.mainNext.Click += new System.EventHandler(this.mainNextContext_Click);
+            this.mainNext.MouseEnter += new System.EventHandler(this.mainNext_MouseEnter);
+            this.mainNext.MouseLeave += new System.EventHandler(this.mainNext_MouseLeave);
             // 
             // side
             // 
@@ -329,7 +329,7 @@ namespace WinCustom
             this.sideCortana.Name = "sideCortana";
             this.sideCortana.Size = new System.Drawing.Size(163, 28);
             this.sideCortana.TabIndex = 12;
-            this.sideCortana.Text = "Cortana";
+            this.sideCortana.Text = "Windows Search";
             this.sideCortana.UseVisualStyleBackColor = false;
             // 
             // sideContextMenu
@@ -434,28 +434,28 @@ namespace WinCustom
 
         private System.Windows.Forms.Panel topDrag;
         private System.Windows.Forms.Panel bottom;
-        private System.Windows.Forms.Label mainLogo;
         private System.Windows.Forms.Button topClose;
         private System.Windows.Forms.Button topMinimise;
-        private System.Windows.Forms.Button mainNextContext;
-        private System.Windows.Forms.Label mainSubtitle;
-        private System.Windows.Forms.Button sideTaskbar;
-        private System.Windows.Forms.Button sideStartMenu;
-        private Transparent hoverExpand;
-        private System.Windows.Forms.Button sideAbout;
         public Panel side;
-        private Transparent hoverCollapse;
         private Label label4;
         private Label label3;
         private Label label2;
         private Label label1;
-        private Button sideControlPanel;
         private Label label5;
-        private Button sideHome;
         private Button mainSettings;
         public Button sideContextMenu;
         public Button sideCortana;
         public Panel main;
+        public Button sideTaskbar;
+        public Button sideStartMenu;
+        public Button sideAbout;
+        public Button sideControlPanel;
+        public Button sideHome;
+        public Label mainLogo;
+        public Button mainNext;
+        public Label mainSubtitle;
+        public Transparent hoverExpand;
+        public Transparent hoverCollapse;
     }
 }
 

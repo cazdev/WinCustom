@@ -19,6 +19,12 @@ namespace WinCustom
         {
             InitializeComponent();
             SetStyle(ControlStyles.SupportsTransparentBackColor, true);
+            ScreenManager.main = this;
+
+            if (!Directory.Exists(RegistryManager.AppData))
+            {
+                Directory.CreateDirectory(RegistryManager.AppData);
+            }
         }
 
         //Fix control flickering
@@ -86,12 +92,6 @@ namespace WinCustom
             }
         }
 
-        private frmDisplay display = new frmDisplay()
-        {
-            TopLevel = false,
-            AutoScroll = true
-        };
-
         private void topClose_Click(object sender, EventArgs e)
         {
             Environment.Exit(0);
@@ -113,12 +113,12 @@ namespace WinCustom
 
         private void mainNext_MouseEnter(object sender, EventArgs e)
         {
-            mainNextContext.BackgroundImage = Resources.next_button_hover;
+            mainNext.BackgroundImage = Resources.next_button_hover;
         }
 
         private void mainNext_MouseLeave(object sender, EventArgs e)
         {
-            mainNextContext.BackgroundImage = Resources.next_button;
+            mainNext.BackgroundImage = Resources.next_button;
         }
 
         private void mainLogo_Click(object sender, EventArgs e)
@@ -153,51 +153,31 @@ namespace WinCustom
 
         private void mainNextContext_Click(object sender, EventArgs e)
         {
-            if (!Directory.Exists(RegistryManager.AppData))
-            {
-                Directory.CreateDirectory(RegistryManager.AppData);
-            }
-
-            hoverCollapse.BringToFront();
+            hoverCollapse.SendToBack();
+            hoverExpand.SendToBack();
 
             // Hide previous controls
-            display.mainPrevious.Hide();
             mainLogo.Hide();
             mainSubtitle.Hide();
-            mainNextContext.Hide();
+            mainNext.Hide();
 
-            sideContextMenu.BackColor = Color.FromArgb(52, 152, 219);
+            // Add display form to main panel
+            main.Controls.Add(ScreenManager.display);
 
-            if (RegistryManager.RegistryValueExists(
-                @"HKEY_CLASSES_ROOT\Allfilesystemobjects\shell\windows.copyaspath", "InvokeCommandOnSelection"))
-            {
-                display.mainCheckBox.Checked = true;
-            }
-            else
-            {
-                display.mainCheckBox.Checked = false;
-            }
+            // Display next screen
+            ScreenManager.display.Enabled = true;
+            ScreenManager.display.Show();
 
-            main.Controls.Add(display);
-            //display next screen
-            display.Show();
-            display.Enabled = true; ;
+            ScreenManager.displayMenu = ScreenManager.displayMenus.Context_Menu;
+            ScreenManager.DisplayNext();
+            ScreenManager.DefaultCheckBox();
         }
 
         private void sideHome_Click(object sender, EventArgs e)
         {
-            // Hide previous controls
-            mainLogo.Show();
-            mainSubtitle.Show();
-            mainNextContext.Show();
-            sideContextMenu.BackColor = Color.FromArgb(40,40,40);
-            sideControlPanel.BackColor = Color.FromArgb(40, 40, 40);
-            sideCortana.BackColor = Color.FromArgb(40, 40, 40);
-            sideStartMenu.BackColor = Color.FromArgb(40, 40, 40);
-            sideTaskbar.BackColor = Color.FromArgb(40, 40, 40);
-
-            display.Hide();
-            display.Enabled = false;
+            ScreenManager.displayMenu = ScreenManager.displayMenus.Main_Menu;
+            ScreenManager.DisplayNext();
+            ScreenManager.DefaultCheckBox();
         }
     }
 }
