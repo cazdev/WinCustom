@@ -7,5 +7,6 @@ Customise your windows experience in an amazing User Interface!
 - Context Menu
   - Adds the option to copy directory path in file context menu
 - Cortana
+  - Disable Cortana
 - Start Menu
 - Taskbar
