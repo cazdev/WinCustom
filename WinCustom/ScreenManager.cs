@@ -201,6 +201,8 @@ namespace WinCustom
                     display.mainNext.Hide();
                     display.mainPrevious.Hide();
 
+                    main.mainAbout.Hide();
+
                     main.sideContextMenu.BackColor = Color.FromArgb(40, 40, 40);
                     main.sideControlPanel.BackColor = Color.FromArgb(40, 40, 40);
                     main.sideCortana.BackColor = Color.FromArgb(40, 40, 40);
@@ -219,6 +221,8 @@ namespace WinCustom
                     main.sideCortana.BackColor = Color.FromArgb(40, 40, 40);
                     main.sideStartMenu.BackColor = Color.FromArgb(40, 40, 40);
                     main.sideTaskbar.BackColor = Color.FromArgb(40, 40, 40);
+
+                    main.mainAbout.Hide();
 
                     display.mainNext.Show();
                     display.mainPrevious.Hide();
@@ -239,6 +243,8 @@ namespace WinCustom
                     main.sideStartMenu.BackColor = Color.FromArgb(40, 40, 40);
                     main.sideTaskbar.BackColor = Color.FromArgb(40, 40, 40);
 
+                    main.mainAbout.Hide();
+
                     display.mainNext.Show();
                     display.mainPrevious.Show();
 
@@ -254,6 +260,8 @@ namespace WinCustom
 
                     display.mainNext.Show();
                     display.mainPrevious.Show();
+
+                    main.mainAbout.Hide();
 
                     main.sideContextMenu.BackColor = Color.FromArgb(40, 40, 40);
                     main.sideCortana.BackColor = Color.FromArgb(40, 40, 40);
@@ -275,6 +283,8 @@ namespace WinCustom
                     display.mainNext.Show();
                     display.mainPrevious.Show();
 
+                    main.mainAbout.Hide();
+
                     main.sideContextMenu.BackColor = Color.FromArgb(40, 40, 40);
                     main.sideCortana.BackColor = Color.FromArgb(40, 40, 40);
                     main.sideControlPanel.BackColor = Color.FromArgb(40, 40, 40);
@@ -291,6 +301,8 @@ namespace WinCustom
                     // Display next screen
                     ScreenManager.display.Enabled = true;
                     ScreenManager.display.Show();
+
+                    main.mainAbout.Hide();
 
                     main.sideContextMenu.BackColor = Color.FromArgb(40, 40, 40);
                     main.sideCortana.BackColor = Color.FromArgb(40, 40, 40);

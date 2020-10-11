@@ -56,6 +56,7 @@ namespace WinCustom
             this.bottom = new System.Windows.Forms.Panel();
             this.sideExpand = new System.Windows.Forms.Timer(this.components);
             this.sideCollapse = new System.Windows.Forms.Timer(this.components);
+            this.mainAbout = new System.Windows.Forms.Label();
             this.hoverCollapse = new Transparent();
             this.hoverExpand = new Transparent();
             this.topDrag.SuspendLayout();
@@ -112,6 +113,7 @@ namespace WinCustom
             // main
             // 
             this.main.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
+            this.main.Controls.Add(this.mainAbout);
             this.main.Controls.Add(this.hoverCollapse);
             this.main.Controls.Add(this.mainSubtitle);
             this.main.Controls.Add(this.mainNext);
@@ -409,6 +411,20 @@ namespace WinCustom
             this.sideCollapse.Interval = 1;
             this.sideCollapse.Tick += new System.EventHandler(this.sideCollapse_Tick);
             // 
+            // mainAbout
+            // 
+            this.mainAbout.AutoEllipsis = true;
+            this.mainAbout.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
+            this.mainAbout.Cursor = System.Windows.Forms.Cursors.Arrow;
+            this.mainAbout.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.mainAbout.Font = new System.Drawing.Font("Segoe UI Semilight", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.mainAbout.ForeColor = System.Drawing.Color.White;
+            this.mainAbout.Location = new System.Drawing.Point(169, 59);
+            this.mainAbout.Name = "mainAbout";
+            this.mainAbout.Size = new System.Drawing.Size(507, 296);
+            this.mainAbout.TabIndex = 13;
+            this.mainAbout.Text = resources.GetString("mainAbout.Text");
+            // 
             // hoverCollapse
             // 
             this.hoverCollapse.BackColor = System.Drawing.Color.Transparent;
@@ -476,6 +492,7 @@ namespace WinCustom
         public Transparent hoverCollapse;
         private Timer sideExpand;
         private Timer sideCollapse;
+        public Label mainAbout;
     }
 }
 

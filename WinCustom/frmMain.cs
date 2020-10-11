@@ -107,6 +107,7 @@ namespace WinCustom
 
         private void frmMain_Load(object sender, EventArgs e)
         {
+            mainAbout.Hide();
             side.Location = new Point(-133, side.Location.Y);
         }
 
@@ -233,7 +234,17 @@ namespace WinCustom
 
         private void sideAbout_Click(object sender, EventArgs e)
         {
+            mainAbout.Show();
 
+            hoverCollapse.SendToBack();
+            hoverExpand.SendToBack();
+
+            ScreenManager.display.Hide();
+
+            // Hide previous controls
+            mainLogo.Hide();
+            mainSubtitle.Hide();
+            mainNext.Hide();
         }
     }
 }
