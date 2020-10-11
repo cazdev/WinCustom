@@ -30,6 +30,7 @@ namespace WinCustom
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmMain));
             this.topDrag = new System.Windows.Forms.Panel();
             this.topMinimise = new System.Windows.Forms.Button();
@@ -53,6 +54,8 @@ namespace WinCustom
             this.sideControlPanel = new System.Windows.Forms.Button();
             this.mainLogo = new System.Windows.Forms.Label();
             this.bottom = new System.Windows.Forms.Panel();
+            this.sideExpand = new System.Windows.Forms.Timer(this.components);
+            this.sideCollapse = new System.Windows.Forms.Timer(this.components);
             this.hoverCollapse = new Transparent();
             this.hoverExpand = new Transparent();
             this.topDrag.SuspendLayout();
@@ -391,6 +394,16 @@ namespace WinCustom
             this.bottom.Size = new System.Drawing.Size(800, 5);
             this.bottom.TabIndex = 0;
             // 
+            // sideExpand
+            // 
+            this.sideExpand.Interval = 1;
+            this.sideExpand.Tick += new System.EventHandler(this.sideExpand_Tick);
+            // 
+            // sideCollapse
+            // 
+            this.sideCollapse.Interval = 1;
+            this.sideCollapse.Tick += new System.EventHandler(this.sideCollapse_Tick);
+            // 
             // hoverCollapse
             // 
             this.hoverCollapse.BackColor = System.Drawing.Color.Transparent;
@@ -456,6 +469,8 @@ namespace WinCustom
         public Label mainSubtitle;
         public Transparent hoverExpand;
         public Transparent hoverCollapse;
+        private Timer sideExpand;
+        private Timer sideCollapse;
     }
 }
 

@@ -48,50 +48,6 @@ namespace WinCustom
         [System.Runtime.InteropServices.DllImport("user32.dll")]
         public static extern bool ReleaseCapture();
 
-        delegate void SetLocationCallback(Form frm, Control ctrl, Point location);
-
-        private void SetLocation(Form frm, Control ctrl, Point location)
-        {
-            // InvokeRequired required compares the thread ID of the
-            // calling thread to the thread ID of the creating thread.
-            // If these threads are different, it returns true.
-            if (this.side.InvokeRequired)
-            {
-                SetLocationCallback d = new SetLocationCallback(SetLocation);
-                this.Invoke(d, new object[] { frm, ctrl, location });
-            }
-            else
-            {
-                this.side.Location = location;
-            }
-        }
-
-        public void expandControl(Control c, int expandTo)
-        {
-            if (c.Location.X < expandTo)
-            {
-                while (c.Location.X < expandTo)
-                {
-                    //Thread safe control location change
-                    SetLocation(this, c, new Point(c.Location.X + 4, c.Location.Y));
-                    Thread.Sleep(1);
-                }
-            }
-        }
-
-        public void collapseControl(Control c, int collapseTo)
-        {
-            if (c.Location.X > collapseTo)
-            {
-                while (c.Location.X > collapseTo)
-                {
-                    //Thread safe control location change
-                    SetLocation(this, c, new Point(c.Location.X - 4, c.Location.Y));
-                    Thread.Sleep(1);
-                }
-            }
-        }
-
         private void topClose_Click(object sender, EventArgs e)
         {
             Environment.Exit(0);
@@ -133,17 +89,20 @@ namespace WinCustom
 
         private void hoverExpand_MouseEnter(object sender, EventArgs e)
         {
-            if (side.Location.X < 0)
+            if (!sideCollapse.Enabled)
             {
-                var t = new Thread(() => expandControl(side, -6));
-                t.Start();
+                sideExpand.Enabled = true;
             }
         }
 
         private void hoverCollapse_MouseEnter(object sender, EventArgs e)
         {
-            var t = new Thread(() => collapseControl(side, -130));
-            t.Start();
+            if (sideExpand.Enabled)
+            {
+                sideExpand.Enabled = false;
+            }
+            
+            sideCollapse.Enabled = true;
         }
 
         private void frmMain_Load(object sender, EventArgs e)
@@ -178,6 +137,30 @@ namespace WinCustom
             ScreenManager.displayMenu = ScreenManager.displayMenus.Main_Menu;
             ScreenManager.DisplayNext();
             ScreenManager.DefaultCheckBox();
+        }
+
+        private void sideExpand_Tick(object sender, EventArgs e)
+        {
+            if (side.Location.X < -6)
+            {
+                side.Location = new Point(side.Location.X + 8, side.Location.Y);
+            }
+            else
+            {
+                sideExpand.Enabled = false;
+            }
+        }
+
+        private void sideCollapse_Tick(object sender, EventArgs e)
+        {
+            if (side.Location.X > -130)
+            {
+                side.Location = new Point(side.Location.X - 8, side.Location.Y);
+            }
+            else
+            {
+                sideCollapse.Enabled = false;
+            }
         }
     }
 }
