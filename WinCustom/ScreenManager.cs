@@ -184,6 +184,9 @@ namespace WinCustom
                     main.mainSubtitle.Show();
                     main.mainNext.Show();
 
+                    display.mainNext.Hide();
+                    display.mainPrevious.Hide();
+
                     main.sideContextMenu.BackColor = Color.FromArgb(40, 40, 40);
                     main.sideControlPanel.BackColor = Color.FromArgb(40, 40, 40);
                     main.sideCortana.BackColor = Color.FromArgb(40, 40, 40);
@@ -200,6 +203,7 @@ namespace WinCustom
 
                     display.mainNext.Show();
                     display.mainPrevious.Hide();
+
                     display.mainPictureBox.Image = Resources.context;
                     display.mainTitle.Text = "Copy directory path";
                     display.mainSubtitle.Text = "Adds the option to copy directory path in file context menu";
@@ -210,12 +214,17 @@ namespace WinCustom
                     main.sideCortana.BackColor = Color.FromArgb(52, 152, 219);
                     main.sideControlPanel.BackColor = Color.FromArgb(40, 40, 40);
 
+                    display.mainNext.Show();
                     display.mainPrevious.Show();
+
                     display.mainPictureBox.Image = Resources.cortana;
                     display.mainTitle.Text = "Disable Cortana";
                     display.mainSubtitle.Text = "Disable Cortana voice assistant";
                     break;
                 case ScreenManager.displayMenus.Control_Panel:
+
+                    display.mainNext.Show();
+                    display.mainPrevious.Show();
 
                     main.sideCortana.BackColor = Color.FromArgb(40, 40, 40);
                     main.sideControlPanel.BackColor = Color.FromArgb(52, 152, 219);
@@ -225,6 +234,10 @@ namespace WinCustom
                     display.mainSubtitle.Text = "Adds the Color and Appearance option to Control Panel section";
                     break;
                 case ScreenManager.displayMenus.Start_Menu:
+
+                    display.mainNext.Show();
+                    display.mainPrevious.Show();
+
                     main.sideControlPanel.BackColor = Color.FromArgb(40, 40, 40);
                     main.sideStartMenu.BackColor = Color.FromArgb(52, 152, 219);
                     main.sideTaskbar.BackColor = Color.FromArgb(40, 40, 40);
@@ -233,6 +246,7 @@ namespace WinCustom
                     main.sideStartMenu.BackColor = Color.FromArgb(40, 40, 40);
                     main.sideTaskbar.BackColor = Color.FromArgb(52, 152, 219);
 
+                    display.mainPrevious.Show();
                     display.mainNext.Hide();
                     break;
                 default:

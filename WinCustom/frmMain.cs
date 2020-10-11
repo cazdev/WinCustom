@@ -78,7 +78,7 @@ namespace WinCustom
                 }
             }
         }
-        
+
         public void collapseControl(Control c, int collapseTo)
         {
             if (c.Location.X > collapseTo)
