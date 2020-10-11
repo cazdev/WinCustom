@@ -28,23 +28,25 @@ namespace WinCustom
         }
 
 
-        public static bool RegistryValueExists(String keyName, String valueName)
+        public static bool RegistryKeyExists(String keyName, String valueName)
         {
-            if (Registry.GetValue(keyName, valueName, null) == null)
-            {
-                //key does not exist
-                return false;
-            }
-            else
-            {
-                //key exists
-                return true;
-            }
+                if (Registry.GetValue(keyName, valueName, null) == null)
+                {
+                    //key does not exist
+                    return false;
+                }
+                else
+                {
+                    //key exists
+                    return true;
+                }
         }
 
         public static bool GetRegistryValue(String keyName, String valueName, String value)
         {
-            string regValue = Registry.GetValue(keyName, valueName, null).ToString();
+            string regValue = "";
+
+            regValue = Registry.GetValue(keyName, valueName, null).ToString();
 
             if (regValue == value)
             {

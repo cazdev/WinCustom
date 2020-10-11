@@ -123,10 +123,6 @@ namespace WinCustom
             // Add display form to main panel
             main.Controls.Add(ScreenManager.display);
 
-            // Display next screen
-            ScreenManager.display.Enabled = true;
-            ScreenManager.display.Show();
-
             ScreenManager.displayMenu = ScreenManager.displayMenus.Context_Menu;
             ScreenManager.DisplayNext();
             ScreenManager.DefaultCheckBox();
@@ -161,6 +157,83 @@ namespace WinCustom
             {
                 sideCollapse.Enabled = false;
             }
+        }
+
+        private void sideCortana_Click(object sender, EventArgs e)
+        {
+            hoverCollapse.SendToBack();
+            hoverExpand.SendToBack();
+
+            // Hide previous controls
+            mainLogo.Hide();
+            mainSubtitle.Hide();
+            mainNext.Hide();
+
+            // Add display form to main panel
+            main.Controls.Add(ScreenManager.display);
+
+            ScreenManager.displayMenu = ScreenManager.displayMenus.Windows_Search;
+            ScreenManager.DisplayNext();
+            ScreenManager.DefaultCheckBox();
+        }
+
+        private void sideControlPanel_Click(object sender, EventArgs e)
+        {
+            hoverCollapse.SendToBack();
+            hoverExpand.SendToBack();
+
+            // Hide previous controls
+            mainLogo.Hide();
+            mainSubtitle.Hide();
+            mainNext.Hide();
+
+            // Add display form to main panel
+            main.Controls.Add(ScreenManager.display);
+
+            ScreenManager.displayMenu = ScreenManager.displayMenus.Control_Panel;
+            ScreenManager.DisplayNext();
+            ScreenManager.DefaultCheckBox();
+        }
+
+        private void sideStartMenu_Click(object sender, EventArgs e)
+        {
+            hoverCollapse.SendToBack();
+            hoverExpand.SendToBack();
+
+            // Hide previous controls
+            mainLogo.Hide();
+            mainSubtitle.Hide();
+            mainNext.Hide();
+
+            // Add display form to main panel
+            main.Controls.Add(ScreenManager.display);
+
+            ScreenManager.displayMenu = ScreenManager.displayMenus.Start_Menu;
+            ScreenManager.DisplayNext();
+            ScreenManager.DefaultCheckBox();
+        }
+
+        private void sideTaskbar_Click(object sender, EventArgs e)
+        {
+            hoverCollapse.SendToBack();
+            hoverExpand.SendToBack();
+
+            // Hide previous controls
+            mainLogo.Hide();
+            mainSubtitle.Hide();
+            mainNext.Hide();
+
+            // Add display form to main panel
+            main.Controls.Add(ScreenManager.display);
+
+            ScreenManager.displayMenu = ScreenManager.displayMenus.Taskbar;
+            ScreenManager.DisplayNext();
+            ScreenManager.DefaultCheckBox();
+        }
+
+        private void sideAbout_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

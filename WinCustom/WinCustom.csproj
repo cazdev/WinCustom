@@ -107,10 +107,14 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\reg_files\add-appearance-color.reg" />
-    <None Include="Resources\reg_files\CopyAsPath-Restore.reg" />
-    <None Include="Resources\reg_files\CopyAsPath.reg" />
+    <None Include="Resources\reg_files\disable-bing.reg" />
+    <None Include="Resources\reg_files\disable-copyaspath.reg" />
+    <None Include="Resources\reg_files\disable-translucent-taskbar.reg" />
+    <None Include="Resources\reg_files\enable-bing.reg" />
+    <None Include="Resources\reg_files\enable-copyaspath.reg" />
     <None Include="Resources\reg_files\disable-cortana.reg" />
     <None Include="Resources\reg_files\enable-cortana.reg" />
+    <None Include="Resources\reg_files\enable-translucent-taskbar.reg" />
     <None Include="Resources\reg_files\remove-appearance-color.reg" />
     <None Include="Resources\settings.png" />
   </ItemGroup>
@@ -125,8 +129,10 @@
     <Content Include="Resources\gifs\appearance.gif" />
     <Content Include="Resources\gifs\context.gif" />
     <Content Include="Resources\gifs\cortana.gif" />
+    <Content Include="Resources\gifs\start-menu-bing.gif" />
     <Content Include="Resources\next-button-hover1.png" />
     <Content Include="Resources\next-button1.png" />
+    <Content Include="Resources\gifs\translucent-taskbar.gif" />
     <None Include="Resources\next-button.png" />
     <None Include="Resources\next-button-hover.png" />
   </ItemGroup>

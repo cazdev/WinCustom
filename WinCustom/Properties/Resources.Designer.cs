@@ -111,22 +111,24 @@ namespace WinCustom.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap cortana {
+            get {
+                object obj = ResourceManager.GetObject("cortana", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Windows Registry Editor Version 5.00
         ///
-        ///;Show Copy as Path always in the right-click menu, without pressing SHIFT
-        ///;Ramesh Srinivasan, Winhelponline.com
-        ///
-        ///[HKEY_CLASSES_ROOT\Allfilesystemobjects\shell\windows.copyaspath]
-        ///@=&quot;Copy &amp;as path&quot;
-        ///&quot;Icon&quot;=&quot;imageres.dll,-5302&quot;
-        ///&quot;InvokeCommandOnSelection&quot;=dword:00000001
-        ///&quot;VerbHandler&quot;=&quot;{f3d06e7c-1e45-4a26-847e-f9fcdee59be0}&quot;
-        ///&quot;VerbName&quot;=&quot;copyaspath&quot;
-        ///.
+        ///[HKEY_CURRENT_USER\Software\Policies\Microsoft\Windows\Explorer]
+        ///&quot;DisableSearchBoxSuggestions&quot;=dword:00000001.
         /// </summary>
-        internal static string CopyAsPath {
+        internal static string disable_bing {
             get {
-                return ResourceManager.GetString("CopyAsPath", resourceCulture);
+                return ResourceManager.GetString("disable_bing", resourceCulture);
             }
         }
         
@@ -139,19 +141,9 @@ namespace WinCustom.Properties {
         ///[-HKEY_CLASSES_ROOT\Allfilesystemobjects\shell\windows.copyaspath]
         ///.
         /// </summary>
-        internal static string CopyAsPath_Restore {
+        internal static string disable_copyaspath {
             get {
-                return ResourceManager.GetString("CopyAsPath_Restore", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap cortana {
-            get {
-                object obj = ResourceManager.GetObject("cortana", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
+                return ResourceManager.GetString("disable_copyaspath", resourceCulture);
             }
         }
         
@@ -170,12 +162,76 @@ namespace WinCustom.Properties {
         /// <summary>
         ///   Looks up a localized string similar to Windows Registry Editor Version 5.00
         ///
+        ///; created by Walter Glenn
+        ///; for How-To Geek
+        ///; article: http://www.howtogeek.com/?p=258681
+        ///
+        ///[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\Advanced]
+        ///&quot;UseOLEDTaskbarTransparency&quot;=-.
+        /// </summary>
+        internal static string disable_translucent_taskbar {
+            get {
+                return ResourceManager.GetString("disable_translucent_taskbar", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Windows Registry Editor Version 5.00
+        ///
+        ///[HKEY_CURRENT_USER\Software\Policies\Microsoft\Windows\Explorer]
+        ///&quot;DisableSearchBoxSuggestions&quot;=dword:00000000.
+        /// </summary>
+        internal static string enable_bing {
+            get {
+                return ResourceManager.GetString("enable_bing", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Windows Registry Editor Version 5.00
+        ///
+        ///;Show Copy as Path always in the right-click menu, without pressing SHIFT
+        ///;Ramesh Srinivasan, Winhelponline.com
+        ///
+        ///[HKEY_CLASSES_ROOT\Allfilesystemobjects\shell\windows.copyaspath]
+        ///@=&quot;Copy &amp;as path&quot;
+        ///&quot;Icon&quot;=&quot;imageres.dll,-5302&quot;
+        ///&quot;InvokeCommandOnSelection&quot;=dword:00000001
+        ///&quot;VerbHandler&quot;=&quot;{f3d06e7c-1e45-4a26-847e-f9fcdee59be0}&quot;
+        ///&quot;VerbName&quot;=&quot;copyaspath&quot;
+        ///.
+        /// </summary>
+        internal static string enable_copyaspath {
+            get {
+                return ResourceManager.GetString("enable_copyaspath", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Windows Registry Editor Version 5.00
+        ///
         ///[HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows\Windows Search]
         ///&quot;AllowCortana&quot;=dword:00000001.
         /// </summary>
         internal static string enable_cortana {
             get {
                 return ResourceManager.GetString("enable_cortana", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Windows Registry Editor Version 5.00
+        ///
+        ///; created by Walter Glenn
+        ///; for How-To Geek
+        ///; article: http://www.howtogeek.com/?p=258681
+        ///
+        ///[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\Advanced]
+        ///&quot;UseOLEDTaskbarTransparency&quot;=dword:00000001.
+        /// </summary>
+        internal static string enable_translucent_taskbar {
+            get {
+                return ResourceManager.GetString("enable_translucent_taskbar", resourceCulture);
             }
         }
         
@@ -252,6 +308,26 @@ namespace WinCustom.Properties {
         internal static System.Drawing.Bitmap settings {
             get {
                 object obj = ResourceManager.GetObject("settings", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap start_menu_bing {
+            get {
+                object obj = ResourceManager.GetObject("start_menu_bing", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap translucent_taskbar {
+            get {
+                object obj = ResourceManager.GetObject("translucent_taskbar", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

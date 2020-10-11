@@ -59,12 +59,12 @@ namespace WinCustom
                     if (display.mainCheckBox.Checked)
                     {
                         String filename = "CopyAsPath.reg";
-                        RegistryManager.ApplyRegistry(Resources.CopyAsPath, filename);
+                        RegistryManager.ApplyRegistry(Resources.enable_copyaspath, filename);
                     }
                     else
                     {
                         String filename = "CopyAsPath-Restore.reg";
-                        RegistryManager.ApplyRegistry(Resources.CopyAsPath_Restore, filename);
+                        RegistryManager.ApplyRegistry(Resources.disable_copyaspath, filename);
                     }
                     break;
                 case ScreenManager.displayMenus.Windows_Search:
@@ -92,10 +92,28 @@ namespace WinCustom
                     }
                     break;
                 case ScreenManager.displayMenus.Start_Menu:
-
+                    if (display.mainCheckBox.Checked)
+                    {
+                        String filename = "disable_bing.reg";
+                        RegistryManager.ApplyRegistry(Resources.disable_bing, filename);
+                    }
+                    else
+                    {
+                        String filename = "enable_bing.reg";
+                        RegistryManager.ApplyRegistry(Resources.enable_bing, filename);
+                    }
                     break;
                 case ScreenManager.displayMenus.Taskbar:
-
+                    if (display.mainCheckBox.Checked)
+                    {
+                        String filename = "enable_translucent_taskbar.reg";
+                        RegistryManager.ApplyRegistry(Resources.enable_translucent_taskbar, filename);
+                    }
+                    else
+                    {
+                        String filename = "disable_translucent_taskbar.reg";
+                        RegistryManager.ApplyRegistry(Resources.disable_translucent_taskbar, filename);
+                    }
                     break;
                 default:
                     break;
@@ -107,7 +125,7 @@ namespace WinCustom
             switch (ScreenManager.displayMenu)
             {
                 case ScreenManager.displayMenus.Context_Menu:
-                    if (RegistryManager.RegistryValueExists(
+                    if (RegistryManager.RegistryKeyExists(
                         @"HKEY_CLASSES_ROOT\Allfilesystemobjects\shell\windows.copyaspath", "InvokeCommandOnSelection"))
                     {
                         ScreenManager.display.mainCheckBox.Checked = true;
@@ -129,7 +147,7 @@ namespace WinCustom
                     }
                     break;
                 case ScreenManager.displayMenus.Control_Panel:
-                    if (RegistryManager.RegistryValueExists(
+                    if (RegistryManager.RegistryKeyExists(
                         @"HKEY_CLASSES_ROOT\CLSID\{106ee807-9e5d-451b-a9c5-74908630cefb}", "InfoTip"))
                     {
                         ScreenManager.display.mainCheckBox.Checked = true;
@@ -140,34 +158,26 @@ namespace WinCustom
                     }
                     break;
                 case ScreenManager.displayMenus.Start_Menu:
-
+                    if (RegistryManager.GetRegistryValue(
+                        @"HKEY_CURRENT_USER\Software\Policies\Microsoft\Windows\Explorer", "DisableSearchBoxSuggestions", "0"))
+                    {
+                        ScreenManager.display.mainCheckBox.Checked = true;
+                    }
+                    else
+                    {
+                        ScreenManager.display.mainCheckBox.Checked = false;
+                    }
                     break;
                 case ScreenManager.displayMenus.Taskbar:
-
-                    break;
-                default:
-                    break;
-            }
-        }
-
-        public static void DisplayPrevious()
-        {
-            switch (ScreenManager.displayMenu)
-            {
-                case ScreenManager.displayMenus.Context_Menu:
-
-                    break;
-                case ScreenManager.displayMenus.Windows_Search:
-
-                    break;
-                case ScreenManager.displayMenus.Control_Panel:
-
-                    break;
-                case ScreenManager.displayMenus.Start_Menu:
-
-                    break;
-                case ScreenManager.displayMenus.Taskbar:
-
+                    if (RegistryManager.RegistryKeyExists(
+                        @"HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\Advanced", "UseOLEDTaskbarTransparency"))
+                    {
+                        ScreenManager.display.mainCheckBox.Checked = true;
+                    }
+                    else
+                    {
+                        ScreenManager.display.mainCheckBox.Checked = false;
+                    }
                     break;
                 default:
                     break;
@@ -179,6 +189,10 @@ namespace WinCustom
             switch (ScreenManager.displayMenu)
             {
                 case ScreenManager.displayMenus.Main_Menu:
+
+                    ScreenManager.display.Hide();
+                    ScreenManager.display.Enabled = false;
+
                     // Hide previous controls
                     main.mainLogo.Show();
                     main.mainSubtitle.Show();
@@ -193,13 +207,18 @@ namespace WinCustom
                     main.sideStartMenu.BackColor = Color.FromArgb(40, 40, 40);
                     main.sideTaskbar.BackColor = Color.FromArgb(40, 40, 40);
 
-                    ScreenManager.display.Hide();
-                    ScreenManager.display.Enabled = false;
                     break;
                 case ScreenManager.displayMenus.Context_Menu:
 
+                    // Display next screen
+                    ScreenManager.display.Enabled = true;
+                    ScreenManager.display.Show();
+
                     main.sideContextMenu.BackColor = Color.FromArgb(52, 152, 219);
+                    main.sideControlPanel.BackColor = Color.FromArgb(40, 40, 40);
                     main.sideCortana.BackColor = Color.FromArgb(40, 40, 40);
+                    main.sideStartMenu.BackColor = Color.FromArgb(40, 40, 40);
+                    main.sideTaskbar.BackColor = Color.FromArgb(40, 40, 40);
 
                     display.mainNext.Show();
                     display.mainPrevious.Hide();
@@ -210,9 +229,15 @@ namespace WinCustom
                     break;
                 case ScreenManager.displayMenus.Windows_Search:
 
+                    // Display next screen
+                    ScreenManager.display.Enabled = true;
+                    ScreenManager.display.Show();
+
                     main.sideContextMenu.BackColor = Color.FromArgb(40, 40, 40);
                     main.sideCortana.BackColor = Color.FromArgb(52, 152, 219);
                     main.sideControlPanel.BackColor = Color.FromArgb(40, 40, 40);
+                    main.sideStartMenu.BackColor = Color.FromArgb(40, 40, 40);
+                    main.sideTaskbar.BackColor = Color.FromArgb(40, 40, 40);
 
                     display.mainNext.Show();
                     display.mainPrevious.Show();
@@ -223,28 +248,59 @@ namespace WinCustom
                     break;
                 case ScreenManager.displayMenus.Control_Panel:
 
+                    // Display next screen
+                    ScreenManager.display.Enabled = true;
+                    ScreenManager.display.Show();
+
                     display.mainNext.Show();
                     display.mainPrevious.Show();
 
+                    main.sideContextMenu.BackColor = Color.FromArgb(40, 40, 40);
                     main.sideCortana.BackColor = Color.FromArgb(40, 40, 40);
                     main.sideControlPanel.BackColor = Color.FromArgb(52, 152, 219);
                     main.sideStartMenu.BackColor = Color.FromArgb(40, 40, 40);
+                    main.sideTaskbar.BackColor = Color.FromArgb(40, 40, 40);
+
                     display.mainPictureBox.Image = Resources.appearance;
+
                     display.mainTitle.Text = "Enable Color and Appearance";
                     display.mainSubtitle.Text = "Adds the Color and Appearance option to Control Panel section";
                     break;
                 case ScreenManager.displayMenus.Start_Menu:
 
+                    // Display next screen
+                    ScreenManager.display.Enabled = true;
+                    ScreenManager.display.Show();
+
                     display.mainNext.Show();
                     display.mainPrevious.Show();
 
+                    main.sideContextMenu.BackColor = Color.FromArgb(40, 40, 40);
+                    main.sideCortana.BackColor = Color.FromArgb(40, 40, 40);
                     main.sideControlPanel.BackColor = Color.FromArgb(40, 40, 40);
                     main.sideStartMenu.BackColor = Color.FromArgb(52, 152, 219);
                     main.sideTaskbar.BackColor = Color.FromArgb(40, 40, 40);
+
+                    display.mainPictureBox.Image = Resources.start_menu_bing;
+                    display.mainTitle.Text = "Disable bing search";
+                    display.mainSubtitle.Text = "Removes bing web search from windows search";
+
                     break;
                 case ScreenManager.displayMenus.Taskbar:
+
+                    // Display next screen
+                    ScreenManager.display.Enabled = true;
+                    ScreenManager.display.Show();
+
+                    main.sideContextMenu.BackColor = Color.FromArgb(40, 40, 40);
+                    main.sideCortana.BackColor = Color.FromArgb(40, 40, 40);
+                    main.sideControlPanel.BackColor = Color.FromArgb(40, 40, 40);
                     main.sideStartMenu.BackColor = Color.FromArgb(40, 40, 40);
                     main.sideTaskbar.BackColor = Color.FromArgb(52, 152, 219);
+
+                    display.mainPictureBox.Image = Resources.translucent_taskbar;
+                    display.mainTitle.Text = "Enable translucent taskbar";
+                    display.mainSubtitle.Text = "A translucent effect that applys to wallpaper and windows";
 
                     display.mainPrevious.Show();
                     display.mainNext.Hide();

@@ -286,6 +286,7 @@ namespace WinCustom
             this.sideAbout.TabIndex = 15;
             this.sideAbout.Text = "About";
             this.sideAbout.UseVisualStyleBackColor = false;
+            this.sideAbout.Click += new System.EventHandler(this.sideAbout_Click);
             // 
             // sideTaskbar
             // 
@@ -302,6 +303,7 @@ namespace WinCustom
             this.sideTaskbar.TabIndex = 14;
             this.sideTaskbar.Text = "Taskbar";
             this.sideTaskbar.UseVisualStyleBackColor = false;
+            this.sideTaskbar.Click += new System.EventHandler(this.sideTaskbar_Click);
             // 
             // sideStartMenu
             // 
@@ -318,6 +320,7 @@ namespace WinCustom
             this.sideStartMenu.TabIndex = 13;
             this.sideStartMenu.Text = "Start Menu";
             this.sideStartMenu.UseVisualStyleBackColor = false;
+            this.sideStartMenu.Click += new System.EventHandler(this.sideStartMenu_Click);
             // 
             // sideCortana
             // 
@@ -332,8 +335,9 @@ namespace WinCustom
             this.sideCortana.Name = "sideCortana";
             this.sideCortana.Size = new System.Drawing.Size(163, 28);
             this.sideCortana.TabIndex = 12;
-            this.sideCortana.Text = "Windows Search";
+            this.sideCortana.Text = "Cortana";
             this.sideCortana.UseVisualStyleBackColor = false;
+            this.sideCortana.Click += new System.EventHandler(this.sideCortana_Click);
             // 
             // sideContextMenu
             // 
@@ -367,6 +371,7 @@ namespace WinCustom
             this.sideControlPanel.TabIndex = 21;
             this.sideControlPanel.Text = "Control Panel";
             this.sideControlPanel.UseVisualStyleBackColor = false;
+            this.sideControlPanel.Click += new System.EventHandler(this.sideControlPanel_Click);
             // 
             // mainLogo
             // 
