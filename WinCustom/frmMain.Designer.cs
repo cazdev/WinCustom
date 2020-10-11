@@ -198,7 +198,7 @@ namespace WinCustom
             this.sideHome.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.sideHome.Font = new System.Drawing.Font("Segoe UI", 10.5F);
             this.sideHome.ForeColor = System.Drawing.Color.White;
-            this.sideHome.Location = new System.Drawing.Point(0, 69);
+            this.sideHome.Location = new System.Drawing.Point(0, 50);
             this.sideHome.Name = "sideHome";
             this.sideHome.Size = new System.Drawing.Size(163, 28);
             this.sideHome.TabIndex = 23;
@@ -209,7 +209,7 @@ namespace WinCustom
             // label5
             // 
             this.label5.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(136, 253);
+            this.label5.Location = new System.Drawing.Point(136, 238);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(27, 32);
             this.label5.TabIndex = 22;
@@ -219,7 +219,7 @@ namespace WinCustom
             // label4
             // 
             this.label4.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(136, 224);
+            this.label4.Location = new System.Drawing.Point(136, 209);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(27, 32);
             this.label4.TabIndex = 20;
@@ -229,7 +229,7 @@ namespace WinCustom
             // label3
             // 
             this.label3.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(136, 196);
+            this.label3.Location = new System.Drawing.Point(136, 181);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(27, 32);
             this.label3.TabIndex = 19;
@@ -239,7 +239,7 @@ namespace WinCustom
             // label2
             // 
             this.label2.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(136, 168);
+            this.label2.Location = new System.Drawing.Point(136, 153);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(27, 32);
             this.label2.TabIndex = 18;
@@ -249,7 +249,7 @@ namespace WinCustom
             // label1
             // 
             this.label1.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(136, 140);
+            this.label1.Location = new System.Drawing.Point(136, 125);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(27, 32);
             this.label1.TabIndex = 17;
@@ -267,7 +267,7 @@ namespace WinCustom
             this.mainSettings.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.mainSettings.Font = new System.Drawing.Font("Segoe UI", 10.5F);
             this.mainSettings.ForeColor = System.Drawing.Color.White;
-            this.mainSettings.Location = new System.Drawing.Point(65, 18);
+            this.mainSettings.Location = new System.Drawing.Point(65, 7);
             this.mainSettings.Name = "mainSettings";
             this.mainSettings.Size = new System.Drawing.Size(32, 32);
             this.mainSettings.TabIndex = 16;
@@ -282,7 +282,7 @@ namespace WinCustom
             this.sideAbout.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.sideAbout.Font = new System.Drawing.Font("Segoe UI", 10.5F);
             this.sideAbout.ForeColor = System.Drawing.Color.White;
-            this.sideAbout.Location = new System.Drawing.Point(0, 339);
+            this.sideAbout.Location = new System.Drawing.Point(0, 328);
             this.sideAbout.Name = "sideAbout";
             this.sideAbout.Size = new System.Drawing.Size(163, 28);
             this.sideAbout.TabIndex = 15;
@@ -299,7 +299,7 @@ namespace WinCustom
             this.sideTaskbar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.sideTaskbar.Font = new System.Drawing.Font("Segoe UI", 10.5F);
             this.sideTaskbar.ForeColor = System.Drawing.Color.White;
-            this.sideTaskbar.Location = new System.Drawing.Point(0, 257);
+            this.sideTaskbar.Location = new System.Drawing.Point(0, 242);
             this.sideTaskbar.Name = "sideTaskbar";
             this.sideTaskbar.Size = new System.Drawing.Size(163, 28);
             this.sideTaskbar.TabIndex = 14;
@@ -316,7 +316,7 @@ namespace WinCustom
             this.sideStartMenu.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.sideStartMenu.Font = new System.Drawing.Font("Segoe UI", 10.5F);
             this.sideStartMenu.ForeColor = System.Drawing.Color.White;
-            this.sideStartMenu.Location = new System.Drawing.Point(0, 229);
+            this.sideStartMenu.Location = new System.Drawing.Point(0, 214);
             this.sideStartMenu.Name = "sideStartMenu";
             this.sideStartMenu.Size = new System.Drawing.Size(163, 28);
             this.sideStartMenu.TabIndex = 13;
@@ -333,7 +333,7 @@ namespace WinCustom
             this.sideCortana.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.sideCortana.Font = new System.Drawing.Font("Segoe UI", 10.5F);
             this.sideCortana.ForeColor = System.Drawing.Color.White;
-            this.sideCortana.Location = new System.Drawing.Point(0, 172);
+            this.sideCortana.Location = new System.Drawing.Point(0, 157);
             this.sideCortana.Name = "sideCortana";
             this.sideCortana.Size = new System.Drawing.Size(163, 28);
             this.sideCortana.TabIndex = 12;
@@ -350,7 +350,7 @@ namespace WinCustom
             this.sideContextMenu.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.sideContextMenu.Font = new System.Drawing.Font("Segoe UI", 10.5F);
             this.sideContextMenu.ForeColor = System.Drawing.Color.White;
-            this.sideContextMenu.Location = new System.Drawing.Point(0, 144);
+            this.sideContextMenu.Location = new System.Drawing.Point(0, 129);
             this.sideContextMenu.Name = "sideContextMenu";
             this.sideContextMenu.Size = new System.Drawing.Size(163, 28);
             this.sideContextMenu.TabIndex = 11;
@@ -367,7 +367,7 @@ namespace WinCustom
             this.sideControlPanel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.sideControlPanel.Font = new System.Drawing.Font("Segoe UI", 10.5F);
             this.sideControlPanel.ForeColor = System.Drawing.Color.White;
-            this.sideControlPanel.Location = new System.Drawing.Point(3, 200);
+            this.sideControlPanel.Location = new System.Drawing.Point(3, 185);
             this.sideControlPanel.Name = "sideControlPanel";
             this.sideControlPanel.Size = new System.Drawing.Size(163, 28);
             this.sideControlPanel.TabIndex = 21;

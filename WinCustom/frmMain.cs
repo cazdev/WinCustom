@@ -107,6 +107,7 @@ namespace WinCustom
 
         private void frmMain_Load(object sender, EventArgs e)
         {
+            mainSettings.Hide();
             mainAbout.Hide();
             side.Location = new Point(-133, side.Location.Y);
         }
