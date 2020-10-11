@@ -8,7 +8,7 @@ Customise your windows experience in an amazing User Interface!
   - Adds the option to copy directory path in file context menu
 - Cortana
   - Disable Cortana voice assistant
-- Start Menu
+- Control Panel
   - Adds the Color and Appearance option to Control Panel section
 - Start Menu
   - Removes bing web search from windows search
