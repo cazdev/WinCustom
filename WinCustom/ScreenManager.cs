@@ -186,6 +186,23 @@ namespace WinCustom
 
         public static void DisplayNext()
         {
+            main.sideContextMenu.BackColor = Color.FromArgb(40, 40, 40);
+            main.sideControlPanel.BackColor = Color.FromArgb(40, 40, 40);
+            main.sideCortana.BackColor = Color.FromArgb(40, 40, 40);
+            main.sideStartMenu.BackColor = Color.FromArgb(40, 40, 40);
+            main.sideTaskbar.BackColor = Color.FromArgb(40, 40, 40);
+
+            // Display dynamic screen
+            ScreenManager.display.Enabled = true;
+            ScreenManager.display.Show();
+
+            // Diplay next and previous buttons
+            display.mainNext.Show();
+            display.mainPrevious.Show();
+
+            // Hide about screen
+            main.mainAbout.Hide();
+
             switch (ScreenManager.displayMenu)
             {
                 case ScreenManager.displayMenus.Main_Menu:
@@ -201,73 +218,30 @@ namespace WinCustom
                     display.mainNext.Hide();
                     display.mainPrevious.Hide();
 
-                    main.mainAbout.Hide();
-
-                    main.sideContextMenu.BackColor = Color.FromArgb(40, 40, 40);
-                    main.sideControlPanel.BackColor = Color.FromArgb(40, 40, 40);
-                    main.sideCortana.BackColor = Color.FromArgb(40, 40, 40);
-                    main.sideStartMenu.BackColor = Color.FromArgb(40, 40, 40);
-                    main.sideTaskbar.BackColor = Color.FromArgb(40, 40, 40);
-
                     break;
                 case ScreenManager.displayMenus.Context_Menu:
 
-                    // Display next screen
-                    ScreenManager.display.Enabled = true;
-                    ScreenManager.display.Show();
-
                     main.sideContextMenu.BackColor = Color.FromArgb(52, 152, 219);
-                    main.sideControlPanel.BackColor = Color.FromArgb(40, 40, 40);
-                    main.sideCortana.BackColor = Color.FromArgb(40, 40, 40);
-                    main.sideStartMenu.BackColor = Color.FromArgb(40, 40, 40);
-                    main.sideTaskbar.BackColor = Color.FromArgb(40, 40, 40);
 
-                    main.mainAbout.Hide();
-
-                    display.mainNext.Show();
                     display.mainPrevious.Hide();
 
                     display.mainPictureBox.Image = Resources.context;
+
                     display.mainTitle.Text = "Copy directory path";
                     display.mainSubtitle.Text = "Adds the option to copy directory path in file context menu";
                     break;
                 case ScreenManager.displayMenus.Windows_Search:
 
-                    // Display next screen
-                    ScreenManager.display.Enabled = true;
-                    ScreenManager.display.Show();
-
-                    main.sideContextMenu.BackColor = Color.FromArgb(40, 40, 40);
                     main.sideCortana.BackColor = Color.FromArgb(52, 152, 219);
-                    main.sideControlPanel.BackColor = Color.FromArgb(40, 40, 40);
-                    main.sideStartMenu.BackColor = Color.FromArgb(40, 40, 40);
-                    main.sideTaskbar.BackColor = Color.FromArgb(40, 40, 40);
-
-                    main.mainAbout.Hide();
-
-                    display.mainNext.Show();
-                    display.mainPrevious.Show();
 
                     display.mainPictureBox.Image = Resources.cortana;
+
                     display.mainTitle.Text = "Disable Cortana";
                     display.mainSubtitle.Text = "Disable Cortana voice assistant";
                     break;
                 case ScreenManager.displayMenus.Control_Panel:
 
-                    // Display next screen
-                    ScreenManager.display.Enabled = true;
-                    ScreenManager.display.Show();
-
-                    display.mainNext.Show();
-                    display.mainPrevious.Show();
-
-                    main.mainAbout.Hide();
-
-                    main.sideContextMenu.BackColor = Color.FromArgb(40, 40, 40);
-                    main.sideCortana.BackColor = Color.FromArgb(40, 40, 40);
                     main.sideControlPanel.BackColor = Color.FromArgb(52, 152, 219);
-                    main.sideStartMenu.BackColor = Color.FromArgb(40, 40, 40);
-                    main.sideTaskbar.BackColor = Color.FromArgb(40, 40, 40);
 
                     display.mainPictureBox.Image = Resources.appearance;
 
@@ -276,20 +250,7 @@ namespace WinCustom
                     break;
                 case ScreenManager.displayMenus.Start_Menu:
 
-                    // Display next screen
-                    ScreenManager.display.Enabled = true;
-                    ScreenManager.display.Show();
-
-                    display.mainNext.Show();
-                    display.mainPrevious.Show();
-
-                    main.mainAbout.Hide();
-
-                    main.sideContextMenu.BackColor = Color.FromArgb(40, 40, 40);
-                    main.sideCortana.BackColor = Color.FromArgb(40, 40, 40);
-                    main.sideControlPanel.BackColor = Color.FromArgb(40, 40, 40);
                     main.sideStartMenu.BackColor = Color.FromArgb(52, 152, 219);
-                    main.sideTaskbar.BackColor = Color.FromArgb(40, 40, 40);
 
                     display.mainPictureBox.Image = Resources.start_menu_bing;
                     display.mainTitle.Text = "Disable bing search";
@@ -298,24 +259,13 @@ namespace WinCustom
                     break;
                 case ScreenManager.displayMenus.Taskbar:
 
-                    // Display next screen
-                    ScreenManager.display.Enabled = true;
-                    ScreenManager.display.Show();
-
-                    main.mainAbout.Hide();
-
-                    main.sideContextMenu.BackColor = Color.FromArgb(40, 40, 40);
-                    main.sideCortana.BackColor = Color.FromArgb(40, 40, 40);
-                    main.sideControlPanel.BackColor = Color.FromArgb(40, 40, 40);
-                    main.sideStartMenu.BackColor = Color.FromArgb(40, 40, 40);
                     main.sideTaskbar.BackColor = Color.FromArgb(52, 152, 219);
+
+                    display.mainNext.Hide();
 
                     display.mainPictureBox.Image = Resources.translucent_taskbar;
                     display.mainTitle.Text = "Enable translucent taskbar";
                     display.mainSubtitle.Text = "A translucent effect that applys to wallpaper and windows";
-
-                    display.mainPrevious.Show();
-                    display.mainNext.Hide();
                     break;
                 default:
                     break;
