@@ -11,7 +11,7 @@ Customise your windows experience with an amazing User Interface!
   - Disable Cortana voice assistant
 ![image](https://raw.githubusercontent.com/CazDev/WinCustom/main/WinCustom/Resources/gifs/cortana.gif)
 - Control Panel
-  - Adds the Color and Appearance option to Control Panel section
+  - Adds the Color and Appearance option to Control Panel section (Use high contract mode for better result)
 ![image](https://raw.githubusercontent.com/CazDev/WinCustom/main/WinCustom/Resources/gifs/appearance.gif)
 - Start Menu
   - Removes bing web search from windows search
