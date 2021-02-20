@@ -19,3 +19,8 @@ Customise your windows experience with an amazing User Interface!
 - Taskbar
   - A translucent effect that applys to wallpaper and windows
 ![image](https://raw.githubusercontent.com/CazDev/WinCustom/main/WinCustom/Resources/gifs/translucent-taskbar.gif)
+
+Tested on windows versions 1902 and 20H2
+
+Disclaimer: This program will make changes to your computers registry, please backup your registry before making any changes.
+
