@@ -35,6 +35,9 @@
   <PropertyGroup>
     <ApplicationManifest>app.manifest</ApplicationManifest>
   </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>icon.ico</ApplicationIcon>
+  </PropertyGroup>
   <ItemGroup>
     <Reference Include="PresentationCore" />
     <Reference Include="System" />
@@ -53,11 +56,11 @@
     <Compile Include="CustomCheckBox.cs">
       <SubType>Component</SubType>
     </Compile>
-    <Compile Include="frmContextMenu.cs">
+    <Compile Include="frmDisplay.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmContextMenu.Designer.cs">
-      <DependentUpon>frmContextMenu.cs</DependentUpon>
+    <Compile Include="frmDisplay.Designer.cs">
+      <DependentUpon>frmDisplay.cs</DependentUpon>
     </Compile>
     <Compile Include="frmMain.cs">
       <SubType>Form</SubType>
@@ -65,31 +68,29 @@
     <Compile Include="frmMain.Designer.cs">
       <DependentUpon>frmMain.cs</DependentUpon>
     </Compile>
-    <Compile Include="OvalButton.cs">
-      <SubType>Component</SubType>
-    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
     <Compile Include="RegistryManager.cs" />
+    <Compile Include="ScreenManager.cs" />
     <Compile Include="Transparent.cs">
       <SubType>Component</SubType>
     </Compile>
-    <EmbeddedResource Include="frmContextMenu.resx">
-      <DependentUpon>frmContextMenu.cs</DependentUpon>
+    <EmbeddedResource Include="frmDisplay.resx">
+      <DependentUpon>frmDisplay.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmMain.resx">
       <DependentUpon>frmMain.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
-      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-    <Compile Include="Properties\Resources.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DependentUpon>Resources.resx</DependentUpon>
-      <DesignTime>True</DesignTime>
-    </Compile>
     <None Include="app.manifest" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -105,8 +106,16 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\reg_files\CopyAsPath-Restore.reg" />
-    <None Include="Resources\reg_files\CopyAsPath.reg" />
+    <None Include="Resources\reg_files\add-appearance-color.reg" />
+    <None Include="Resources\reg_files\disable-bing.reg" />
+    <None Include="Resources\reg_files\disable-copyaspath.reg" />
+    <None Include="Resources\reg_files\disable-translucent-taskbar.reg" />
+    <None Include="Resources\reg_files\enable-bing.reg" />
+    <None Include="Resources\reg_files\enable-copyaspath.reg" />
+    <None Include="Resources\reg_files\disable-cortana.reg" />
+    <None Include="Resources\reg_files\enable-cortana.reg" />
+    <None Include="Resources\reg_files\enable-translucent-taskbar.reg" />
+    <None Include="Resources\reg_files\remove-appearance-color.reg" />
     <None Include="Resources\settings.png" />
   </ItemGroup>
   <ItemGroup>
@@ -116,7 +125,16 @@
     <None Include="Resources\back.png" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="icon.ico" />
+    <Content Include="Resources\gifs\appearance.gif" />
     <Content Include="Resources\gifs\context.gif" />
+    <Content Include="Resources\gifs\cortana.gif" />
+    <Content Include="Resources\gifs\start-menu-bing.gif" />
+    <Content Include="Resources\next-button-hover1.png" />
+    <Content Include="Resources\next-button1.png" />
+    <Content Include="Resources\gifs\translucent-taskbar.gif" />
+    <None Include="Resources\next-button.png" />
+    <None Include="Resources\next-button-hover.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

@@ -23,3 +23,4 @@ Customise your windows experience with an amazing User Interface!
 Tested on windows versions 1902 and 20H2
 
 Disclaimer: This program will make changes to your computers registry, please backup your registry before making any changes.
+

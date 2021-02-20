@@ -9,6 +9,7 @@ using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using WinCustom.Properties;
 
 namespace WinCustom
 {
@@ -18,6 +19,12 @@ namespace WinCustom
         {
             InitializeComponent();
             SetStyle(ControlStyles.SupportsTransparentBackColor, true);
+            ScreenManager.main = this;
+
+            if (!Directory.Exists(RegistryManager.AppData))
+            {
+                Directory.CreateDirectory(RegistryManager.AppData);
+            }
         }
 
         //Fix control flickering
@@ -41,50 +48,6 @@ namespace WinCustom
         [System.Runtime.InteropServices.DllImport("user32.dll")]
         public static extern bool ReleaseCapture();
 
-        delegate void SetLocationCallback(Form frm, Control ctrl, Point location);
-
-        private void SetLocation(Form frm, Control ctrl, Point location)
-        {
-            // InvokeRequired required compares the thread ID of the
-            // calling thread to the thread ID of the creating thread.
-            // If these threads are different, it returns true.
-            if (this.side.InvokeRequired)
-            {
-                SetLocationCallback d = new SetLocationCallback(SetLocation);
-                this.Invoke(d, new object[] { frm, ctrl, location });
-            }
-            else
-            {
-                this.side.Location = location;
-            }
-        }
-
-        public void expandControl(Control c, int expandTo)
-        {
-            if (c.Location.X < expandTo)
-            {
-                while (c.Location.X < expandTo)
-                {
-                    //Thread safe control location change
-                    SetLocation(this, c, new Point(c.Location.X + 4, c.Location.Y));
-                    Thread.Sleep(1);
-                }
-            }
-        }
-
-        public void collapseControl(Control c, int collapseTo)
-        {
-            if (c.Location.X > collapseTo)
-            {
-                while (c.Location.X > collapseTo)
-                {
-                    //Thread safe control location change
-                    SetLocation(this, c, new Point(c.Location.X - 4, c.Location.Y));
-                    Thread.Sleep(1);
-                }
-            }
-        }
-
         private void topClose_Click(object sender, EventArgs e)
         {
             Environment.Exit(0);
@@ -104,27 +67,14 @@ namespace WinCustom
             this.WindowState = FormWindowState.Minimized;
         }
 
-        private void mainNext_Click(object sender, EventArgs e)
+        private void mainNext_MouseEnter(object sender, EventArgs e)
         {
-            if (!Directory.Exists(RegistryManager.AppData))
-            {
-                Directory.CreateDirectory(RegistryManager.AppData);
-            }
+            mainNext.BackgroundImage = Resources.next_button_hover;
+        }
 
-            hoverCollapse.BringToFront();
-
-            // Hide previous controls
-            mainLogo.Hide();
-            mainSubtitle.Hide();
-            mainNext.Hide();
-
-            // Display next screen
-            frmContextMenu frm = new frmContextMenu() {
-                TopLevel = false,
-                AutoScroll = true
-            };
-            main.Controls.Add(frm);
-            frm.Show();
+        private void mainNext_MouseLeave(object sender, EventArgs e)
+        {
+            mainNext.BackgroundImage = Resources.next_button;
         }
 
         private void mainLogo_Click(object sender, EventArgs e)
@@ -139,17 +89,163 @@ namespace WinCustom
 
         private void hoverExpand_MouseEnter(object sender, EventArgs e)
         {
-            if (side.Location.X < 0)
+            if (!sideCollapse.Enabled)
             {
-                var t = new Thread(() => expandControl(side, -6));
-                t.Start();
+                sideExpand.Enabled = true;
             }
         }
 
         private void hoverCollapse_MouseEnter(object sender, EventArgs e)
         {
-            var t = new Thread(() => collapseControl(side, -130));
-            t.Start();
+            if (sideExpand.Enabled)
+            {
+                sideExpand.Enabled = false;
+            }
+            
+            sideCollapse.Enabled = true;
+        }
+
+        private void frmMain_Load(object sender, EventArgs e)
+        {
+            mainSettings.Hide();
+            mainAbout.Hide();
+            side.Location = new Point(-133, side.Location.Y);
+        }
+
+        private void mainNextContext_Click(object sender, EventArgs e)
+        {
+            hoverCollapse.SendToBack();
+            hoverExpand.SendToBack();
+
+            // Hide previous controls
+            mainLogo.Hide();
+            mainSubtitle.Hide();
+            mainNext.Hide();
+
+            // Add display form to main panel
+            main.Controls.Add(ScreenManager.display);
+
+            ScreenManager.displayMenu = ScreenManager.displayMenus.Context_Menu;
+            ScreenManager.DisplayNext();
+            ScreenManager.DefaultCheckBox();
+        }
+
+        private void sideHome_Click(object sender, EventArgs e)
+        {
+            ScreenManager.displayMenu = ScreenManager.displayMenus.Main_Menu;
+            ScreenManager.DisplayNext();
+            ScreenManager.DefaultCheckBox();
+        }
+
+        private void sideExpand_Tick(object sender, EventArgs e)
+        {
+            if (side.Location.X < -6)
+            {
+                side.Location = new Point(side.Location.X + 8, side.Location.Y);
+            }
+            else
+            {
+                sideExpand.Enabled = false;
+            }
+        }
+
+        private void sideCollapse_Tick(object sender, EventArgs e)
+        {
+            if (side.Location.X > -130)
+            {
+                side.Location = new Point(side.Location.X - 8, side.Location.Y);
+            }
+            else
+            {
+                sideCollapse.Enabled = false;
+            }
+        }
+
+        private void sideCortana_Click(object sender, EventArgs e)
+        {
+            hoverCollapse.SendToBack();
+            hoverExpand.SendToBack();
+
+            // Hide previous controls
+            mainLogo.Hide();
+            mainSubtitle.Hide();
+            mainNext.Hide();
+
+            // Add display form to main panel
+            main.Controls.Add(ScreenManager.display);
+
+            ScreenManager.displayMenu = ScreenManager.displayMenus.Windows_Search;
+            ScreenManager.DisplayNext();
+            ScreenManager.DefaultCheckBox();
+        }
+
+        private void sideControlPanel_Click(object sender, EventArgs e)
+        {
+            hoverCollapse.SendToBack();
+            hoverExpand.SendToBack();
+
+            // Hide previous controls
+            mainLogo.Hide();
+            mainSubtitle.Hide();
+            mainNext.Hide();
+
+            // Add display form to main panel
+            main.Controls.Add(ScreenManager.display);
+
+            ScreenManager.displayMenu = ScreenManager.displayMenus.Control_Panel;
+            ScreenManager.DisplayNext();
+            ScreenManager.DefaultCheckBox();
+        }
+
+        private void sideStartMenu_Click(object sender, EventArgs e)
+        {
+            hoverCollapse.SendToBack();
+            hoverExpand.SendToBack();
+
+            // Hide previous controls
+            mainLogo.Hide();
+            mainSubtitle.Hide();
+            mainNext.Hide();
+
+            // Add display form to main panel
+            main.Controls.Add(ScreenManager.display);
+
+            ScreenManager.displayMenu = ScreenManager.displayMenus.Start_Menu;
+            ScreenManager.DisplayNext();
+            ScreenManager.DefaultCheckBox();
+        }
+
+        private void sideTaskbar_Click(object sender, EventArgs e)
+        {
+            hoverCollapse.SendToBack();
+            hoverExpand.SendToBack();
+
+            // Hide previous controls
+            mainLogo.Hide();
+            mainSubtitle.Hide();
+            mainNext.Hide();
+
+            // Add display form to main panel
+            main.Controls.Add(ScreenManager.display);
+
+            ScreenManager.displayMenu = ScreenManager.displayMenus.Taskbar;
+            ScreenManager.DisplayNext();
+            ScreenManager.DefaultCheckBox();
+        }
+
+        private void sideAbout_Click(object sender, EventArgs e)
+        {
+            mainAbout.Show();
+
+            hoverCollapse.SendToBack();
+            hoverExpand.SendToBack();
+
+            ScreenManager.display.Hide();
+
+            // Hide previous controls
+            mainLogo.Hide();
+            mainSubtitle.Hide();
+            mainNext.Hide();
         }
     }
 }
